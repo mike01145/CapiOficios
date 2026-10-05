@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <script src="https://www.gstatic.com/firebasejs/12.19.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.19.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore-compat.js"></script>
+
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyD5qjAlI7G4Xm8GBE9fgiE5CP695QROItM",
+        authDomain: "proyectoficios-e37de.firebaseapp.com",
+        projectId: "proyectoficios-e37de",
+        storageBucket: "proyectoficios-e37de.firebasestorage.app",
+        messagingSenderId: "295241021220",
+        appId: "1:295241021220:web:f9cff4d6e6d0f11aac65b1",
+      };
+
+      firebase.initializeApp(firebaseConfig);
+
+      console.log("Firebase inicializado correctamente");
+    </script>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>CapiLab</title>
+    <link rel="shortcut icon" href="TemplateData/logo.png" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        background: #b8b49c;
+        overflow: hidden;
+      }
+      #unity-container {
+        position: fixed;
+        inset: 0;
+      }
+      #unity-canvas {
+        width: 100%;
+        height: 100%;
+        display: block;
+        background: #231f20;
+      }
+
+      /* Pantalla de carga */
+      #loader {
+        position: fixed;
+        inset: 0;
+        z-index: 10;
+        background: #b8b49c;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-family: "Inter", system-ui, sans-serif;
+        color: #000;
+        transition: opacity 0.5s ease;
+      }
+      #loader.hide {
+        opacity: 0;
+        pointer-events: none;
+      }
+      #loader img {
+        width: min(340px, 50vw);
+        height: auto;
+      }
+      #loader h1 {
+        margin: 8px 0 48px;
+        font-size: clamp(40px, 8vw, 64px);
+        font-weight: 400;
+      }
+      #loader p {
+        margin: 0 0 12px;
+        font-size: 15px;
+      }
+      #bar {
+        width: min(340px, 60vw);
+        height: 10px;
+        background: #c4c4c4;
+        border-radius: 6px;
+        overflow: hidden;
+      }
+      #bar-fill {
+        width: 0%;
+        height: 100%;
+        background: #4d6b4a;
+        border-radius: 6px;
+        transition: width 0.15s linear;
+      }
+    </style>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico" />
+    <link rel="stylesheet" href="TemplateData/style.css" />
+  </head>
+  <body>
+    <div id="unity-container">
+      <canvas id="unity-canvas" tabindex="-1"></canvas>
+    </div>
+
+    <div id="loader">
+      <!-- Poné tu logo en TemplateData/logo.png -->
+      <img src="TemplateData/logo.png" alt="CapiLab" />
+      <h1>CapiLab</h1>
+      <p id="loader-text">Cargando...</p>
+      <div id="bar"><div id="bar-fill"></div></div>
+    </div>
+    <script>
+      var canvas = document.querySelector("#unity-canvas");
+
+      function unityShowBanner(msg, type) {
+        var warningBanner = document.querySelector("#unity-warning");
+        function updateBannerVisibility() {
+          warningBanner.style.display = warningBanner.children.length
+            ? "block"
+            : "none";
+        }
+        var div = document.createElement("div");
+        div.innerHTML = msg;
+        warningBanner.appendChild(div);
+        if (type == "error")
+          div.style = "background: red; color: white; padding: 10px;";
+        else {
+          if (type == "warning")
+            div.style = "background: yellow; padding: 10px;";
+          setTimeout(function () {
+            warningBanner.removeChild(div);
+            updateBannerVisibility();
+          }, 5000);
+        }
+        updateBannerVisibility();
+      }
+
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/CapiOficios.loader.js";
+      var config = {
+        arguments: [],
+        dataUrl: buildUrl + "/CapiOficios.data.br",
+        frameworkUrl: buildUrl + "/CapiOficios.framework.js.br",
+        codeUrl: buildUrl + "/CapiOficios.wasm.br",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "DefaultCompany",
+        productName: "CapiOficios",
+        productVersion: "0.1.0",
+        showBanner: unityShowBanner,
+      };
+
+      var script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onload = () => {
+        createUnityInstance(canvas, config, (progress) => {
+          document.getElementById("bar-fill").style.width =
+            100 * progress + "%";
+        })
+          .then((unityInstance) => {
+            var l = document.getElementById("loader");
+            l.classList.add("hide");
+            setTimeout(() => {
+              l.style.display = "none";
+            }, 600);
+          })
+          .catch((message) => {
+            document.getElementById("loader-text").textContent =
+              "Error al cargar: " + message;
+          });
+      };
+      script.onerror = () => {
+        document.getElementById("loader-text").textContent =
+          "No se encontró " + loaderUrl;
+      };
+      document.body.appendChild(script);
+    </script>
+  </body>
+</html>
