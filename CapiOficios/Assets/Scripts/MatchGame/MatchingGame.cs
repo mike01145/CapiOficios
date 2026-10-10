@@ -13,11 +13,19 @@ public class MatchingGame : MonoBehaviour
 
     [Header("Rondas (opcional)")]
     [SerializeField] private GameObject[] _rounds;
+    [Header("Cuántas se ven a la vez")]
+    [SerializeField] private int visibleAtOnce = 0;
+    [SerializeField] private bool reuseFreedSlots = true;
 
     [Header("Errores")]
     [SerializeField] private int _maxFails = 3; // al fallar MÁS de este número se abre el panel
     [SerializeField] private GameObject _failPanel;
     [SerializeField] private UnityEvent _onTooManyFails;
+    [Header("Animación al acertar")]
+    [SerializeField] private int _blinkCount = 2;          // cuántas veces titila en verde
+    [SerializeField] private float _blinkInterval = 0.12f;
+    [SerializeField] private float _fadeOutTime = 0.3f;    // desvanecimiento
+    [SerializeField] private float _fadeInTime = 0.3f;
 
     [Header("Estilo")]
     [SerializeField] private float _thickness = 12f;
@@ -44,6 +52,8 @@ public class MatchingGame : MonoBehaviour
     private int _fails;
     private bool _locked;
 
+    private readonly Queue<ConnectorSource> pending = new();
+    private List<ConnectorTarget> roundTargets = new();
     private void Awake()
     {
         _triangle = _arrowSprite != null ? _arrowSprite : CreateTriangleSprite();
@@ -53,7 +63,36 @@ public class MatchingGame : MonoBehaviour
 
     // ---------- Rondas ----------
     private bool HasRounds => _rounds != null && _rounds.Length > 0;
-
+    private List<T> InRound<T>(int index) where T : Component
+    {
+        var list = new List<T>();
+        if (HasRounds) list.AddRange(_rounds[index].GetComponentsInChildren<T>(true));
+        else list.AddRange(FindObjectsByType<T>(FindObjectsInactive.Include, FindObjectsSortMode.None));
+        list.Sort((a, b) => CompareHierarchy(a.transform, b.transform));
+        return list;
+    }
+    private List<T> AllOfType<T>() where T : Component
+    {
+        var list = new List<T>();
+        if (HasRounds) foreach (var r in _rounds) list.AddRange(r.GetComponentsInChildren<T>(true));
+        else list.AddRange(FindObjectsByType<T>(FindObjectsInactive.Include, FindObjectsSortMode.None));
+        return list;
+    }
+    private static int CompareHierarchy(Transform a, Transform b)
+    {
+        var pa = SiblingPath(a);
+        var pb = SiblingPath(b);
+        int n = Mathf.Min(pa.Count, pb.Count);
+        for (int i = 0; i < n; i++)
+            if (pa[i] != pb[i]) return pa[i].CompareTo(pb[i]);
+        return pa.Count.CompareTo(pb.Count);
+    }
+    private static List<int> SiblingPath(Transform t)
+    {
+        var l = new List<int>();
+        while (t != null) { l.Insert(0, t.GetSiblingIndex()); t = t.parent; }
+        return l;
+    }
     private ConnectorSource[] AllSources() => HasRounds ? GatherFromRounds<ConnectorSource>()
         : FindObjectsByType<ConnectorSource>(FindObjectsInactive.Include, FindObjectsSortMode.None);
 
@@ -71,25 +110,63 @@ public class MatchingGame : MonoBehaviour
     {
         _roundIndex = index;
         if (HasRounds)
-        {
             for (int i = 0; i < _rounds.Length; i++) _rounds[i].SetActive(i == index);
-            _remainingInRound = _rounds[index].GetComponentsInChildren<ConnectorSource>(true).Length;
-        }
-        else
-        {
-            _remainingInRound = AllSources().Length;
-        }
-    }
 
-    private void OnLinkSolved()
+        var sources = InRound<ConnectorSource>(index);
+        roundTargets = InRound<ConnectorTarget>(index);
+        pending.Clear();
+
+        int visible = visibleAtOnce <= 0 ? sources.Count : Mathf.Min(visibleAtOnce, sources.Count);
+        var visibleIds = new HashSet<int>();
+
+        for (int i = 0; i < sources.Count; i++)
+        {
+            bool show = i < visible;
+            sources[i].Connected = false;
+            sources[i].gameObject.SetActive(show);
+            if (show) visibleIds.Add(sources[i].id);
+            else pending.Enqueue(sources[i]);
+        }
+
+        foreach (var t in roundTargets)
+        {
+            t.Solved = false;
+            t.gameObject.SetActive(visibleIds.Contains(t.id));
+        }
+
+        _remainingInRound = sources.Count;
+    }
+    private void OnPairRemoved(Vector3 freedSourcePos, Vector3 freedTargetPos)
     {
         _remainingInRound--;
-        if (_remainingInRound > 0) return;
 
-        if (HasRounds && _roundIndex + 1 < _rounds.Length) ShowRound(_roundIndex + 1);
-        else _onCompleted?.Invoke();
+        if (_remainingInRound <= 0)
+        {
+            if (HasRounds && _roundIndex + 1 < _rounds.Length) ShowRound(_roundIndex + 1);
+            else _onCompleted?.Invoke();
+            return;
+        }
+
+        if (pending.Count == 0) return;
+
+        // Aparece la siguiente opción de la lista junto con su respuesta
+        ConnectorSource next = pending.Dequeue();
+        ConnectorTarget nextTarget = roundTargets.Find(t => t.id == next.id);
+
+        if (reuseFreedSlots)
+        {
+            next.transform.position = freedSourcePos;
+            if (nextTarget != null) nextTarget.transform.position = freedTargetPos;
+        }
+
+        next.gameObject.SetActive(true);
+        StartCoroutine(FadeIn(next.gameObject));
+        if (nextTarget != null)
+        {
+            nextTarget.gameObject.SetActive(true);
+            StartCoroutine(FadeIn(nextTarget.gameObject));
+        }
     }
-
     // ---------- Llamado desde ConnectorSource ----------
     public void BeginLink(ConnectorSource source, PointerEventData e)
     {
@@ -153,16 +230,6 @@ public class MatchingGame : MonoBehaviour
             _onTooManyFails?.Invoke();
         }
     }
-
-    private IEnumerator SolveRoutine(Link link, ConnectorTarget target)
-    {
-        yield return new WaitForSecondsRealtime(_correctDelay);
-        Destroy(link.line.gameObject);
-        link.source.gameObject.SetActive(false);
-        target.gameObject.SetActive(false);
-        OnLinkSolved();
-    }
-
     // Llamalo desde el panel (por ejemplo, botón "Reintentar")
     public void ResetGame()
     {
@@ -178,7 +245,89 @@ public class MatchingGame : MonoBehaviour
         if (_failPanel != null) _failPanel.SetActive(false);
         ShowRound(0);
     }
+    private IEnumerator SolveRoutine(Link link, ConnectorTarget target)
+    {
+        ConnectorSource source = link.source;
+        CanvasGroup srcGroup = GetGroup(source.gameObject);
+        CanvasGroup tgtGroup = GetGroup(target.gameObject);
+        Image srcImg = source.GetComponent<Image>();
+        Image tgtImg = target.GetComponent<Image>();
+        Color srcOriginal = srcImg != null ? srcImg.color : Color.white;
+        Color tgtOriginal = tgtImg != null ? tgtImg.color : Color.white;
 
+        Vector3 srcPos = source.transform.position;
+        Vector3 tgtPos = target.transform.position;
+
+        if (srcImg != null) srcImg.color = _correctColor;
+        if (tgtImg != null) tgtImg.color = _correctColor;
+
+        // Titilar
+        for (int i = 0; i < _blinkCount; i++)
+        {
+            ApplyAlpha(link, srcGroup, tgtGroup, 0.3f);
+            yield return new WaitForSecondsRealtime(_blinkInterval);
+            ApplyAlpha(link, srcGroup, tgtGroup, 1f);
+            yield return new WaitForSecondsRealtime(_blinkInterval);
+        }
+
+        // Desvanecer
+        for (float t = 0f; t < _fadeOutTime; t += Time.unscaledDeltaTime)
+        {
+            ApplyAlpha(link, srcGroup, tgtGroup, 1f - t / _fadeOutTime);
+            yield return null;
+        }
+
+        // Dejar todo como estaba (para que el reinicio los encuentre normales) y ocultar
+        Destroy(link.line.gameObject);
+        srcGroup.alpha = 1f;
+        tgtGroup.alpha = 1f;
+        if (srcImg != null) srcImg.color = srcOriginal;
+        if (tgtImg != null) tgtImg.color = tgtOriginal;
+        source.gameObject.SetActive(false);
+        target.gameObject.SetActive(false);
+
+        OnPairRemoved(srcPos, tgtPos);
+    }
+
+    private void ApplyAlpha(Link link, CanvasGroup a, CanvasGroup b, float alpha)
+    {
+        a.alpha = alpha;
+        b.alpha = alpha;
+        Color c = _correctColor;
+        c.a = alpha;
+        SetColor(link, c);
+    }
+
+    private IEnumerator FadeIn(GameObject go)
+    {
+        CanvasGroup g = GetGroup(go);
+        g.alpha = 0f;
+        for (float t = 0f; t < _fadeInTime; t += Time.unscaledDeltaTime)
+        {
+            g.alpha = t / _fadeInTime;
+            yield return null;
+        }
+        g.alpha = 1f;
+    }
+
+    private IEnumerator FadeAndDestroy(Link l)
+    {
+        SetColor(l, _wrongColor);
+        float t = 0f;
+        while (t < 0.4f)
+        {
+            t += Time.unscaledDeltaTime;
+            var c = _wrongColor; c.a = 1f - t / 0.4f;
+            SetColor(l, c);
+            yield return null;
+        }
+        Destroy(l.line.gameObject);
+    }
+    private static CanvasGroup GetGroup(GameObject go)
+    {
+        var g = go.GetComponent<CanvasGroup>();
+        return g != null ? g : go.AddComponent<CanvasGroup>();
+    }
     // ---------- Dibujo ----------
     private Link CreateLink(Color color)
     {
@@ -225,21 +374,6 @@ public class MatchingGame : MonoBehaviour
         Vector3 world = rt.TransformPoint(rt.rect.center);
         return _lineContainer.InverseTransformPoint(world);
     }
-
-    private IEnumerator FadeAndDestroy(Link l)
-    {
-        SetColor(l, _wrongColor);
-        float t = 0f;
-        while (t < 0.4f)
-        {
-            t += Time.unscaledDeltaTime;
-            var c = _wrongColor; c.a = 1f - t / 0.4f;
-            SetColor(l, c);
-            yield return null;
-        }
-        Destroy(l.line.gameObject);
-    }
-
     private Sprite CreateTriangleSprite()
     {
         const int size = 64;

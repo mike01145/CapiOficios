@@ -39,7 +39,6 @@ public class ModelViewer : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     private void Start()
     {
         CreateRenderTexture();
-        ShowModel(0);
     }
     private void CreateRenderTexture()
     {

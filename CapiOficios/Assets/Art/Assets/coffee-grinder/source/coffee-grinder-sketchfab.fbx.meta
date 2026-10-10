@@ -3,7 +3,57 @@ guid: 0b3a540dc33ed964aaab8050b9258cd7
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: da36969caf07f1243b863bf0e7007857, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: black.001
+    second: {fileID: 2100000, guid: 2acfe3844b94c8744a712f7a0c986c33, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blue_light.001
+    second: {fileID: 2100000, guid: 5ac37f82253a2f345a758c65f41e77d6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: buton.001
+    second: {fileID: 2100000, guid: b9956b4e1cf2cfa43b6baf44f24ce99f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: buton.kenar.001
+    second: {fileID: 2100000, guid: d2775b50a89c8f840bf42cab157f231c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: coffee
+    second: {fileID: 2100000, guid: 3027f5b9fe43cd04093325e7b80580ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grey.001
+    second: {fileID: 2100000, guid: ed53518e8fa37ea4094a008a3ba0d5f8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal.001
+    second: {fileID: 2100000, guid: fef96099bd0a05842a4e8bd6b9c31c7d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: siyah.001
+    second: {fileID: 2100000, guid: 2ad66b0b38abeea49b9eb2ea82aebe65, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "siyah.altl\u0131k.001"
+    second: {fileID: 2100000, guid: 0c332b0053136824f9cae918dd3a5146, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
