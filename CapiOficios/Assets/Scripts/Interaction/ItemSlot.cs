@@ -39,6 +39,7 @@ public class ItemSlot : MonoBehaviour, IClickable
         GetPlaced = held;
         held.transform.SetPositionAndRotation(GetSnap.position, GetSnap.rotation);
         held.SetColliders(true);
+        GameEvents.Raise(Feedback.Place, GetSnap);
         OnPlaced(held);
         return true;
     }

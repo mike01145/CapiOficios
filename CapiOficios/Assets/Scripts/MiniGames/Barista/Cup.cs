@@ -71,8 +71,13 @@ public class Cup : Carryable
         MilkQuality q = jug.GetMilk;
         AddMilk(q, jug.GetFoamed);
         jug.ResetState();
+        GameEvents.Raise(Feedback.Pour, transform);
 
-        if (q == MilkQuality.Good) hand.Say("Leche vertida.");
+        if (q == MilkQuality.Good)
+        {
+            GameEvents.CompleteStep(GameStep.PourMilk);
+            hand.Say("Leche vertida.");
+        }
         else if (q == MilkQuality.Cold) hand.Say("Vertiste leche fría. Quizás convenga descartar la taza.");
         else hand.Say("Vertiste leche quemada. Conviene descartar la taza.");
     }

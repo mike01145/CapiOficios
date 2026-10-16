@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class GroupHead : ItemSlot
 {
-    [SerializeField] private float lockAngle = 40f;
-    [SerializeField] private float lockSeconds = 0.4f;
+    [SerializeField] private float _lockAngle = 40f;
+    [SerializeField] private float _lockSeconds = 0.4f;
 
     protected override bool Accepts(Carryable c, out string why)
     {
@@ -39,17 +39,19 @@ public class GroupHead : ItemSlot
     {
         pf.GetBusy = true;
         Quaternion from = pf.transform.rotation;
-        Quaternion to = from * Quaternion.Euler(0f, lockAngle, 0f);
+        Quaternion to = from * Quaternion.Euler(0f, _lockAngle, 0f);
 
-        for (float t = 0f; t < lockSeconds; t += Time.deltaTime)
+        for (float t = 0f; t < _lockSeconds; t += Time.deltaTime)
         {
-            pf.transform.rotation = Quaternion.Slerp(from, to, t / lockSeconds);
+            pf.transform.rotation = Quaternion.Slerp(from, to, t / _lockSeconds);
             yield return null;
         }
 
         pf.transform.rotation = to;
         pf.SetState(PortafilterState.Locked);
         pf.GetBusy = false;
+        GameEvents.Raise(Feedback.PortafilterLocked, transform);
+        GameEvents.CompleteStep(GameStep.LockPortafilter);
         PlayerHand.Instance.Say("Portafiltro asegurado.");
     }
 }

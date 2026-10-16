@@ -22,7 +22,6 @@ public class Grinder : ItemSlot
         if (held != null && held.Type == ItemType.Beans) { LoadBeans(hand); return; }
         base.OnClicked();
     }
-
     private void LoadBeans(PlayerHand hand)
     {
         Debug.Log("Granos cargados. HasBeans = " + GetHasBeans);
@@ -30,6 +29,8 @@ public class Grinder : ItemSlot
         hand.Consume();
         GetHasBeans = true;
         if (_beansInHopper != null) _beansInHopper.SetActive(true);
+        GameEvents.Raise(Feedback.BeansLoaded, transform);
+        GameEvents.CompleteStep(GameStep.LoadBeans);
         hand.Say("Granos cargados en el molinillo.");
     }
     public void OnHopperClicked()
@@ -85,20 +86,24 @@ public class Grinder : ItemSlot
     {
         _grinding = true;
         pf.GetBusy = true;
+        GameEvents.Raise(Feedback.GrindStart, transform);
 
         for (float t = 0f; t < _grindSeconds; t += Time.deltaTime)
         {
             float p = t / _grindSeconds;
-            ProgressHUD.Display("Moliendo café", p, Mathf.RoundToInt(p * 100f) + "%");
+            GameEvents.ShowProgress(transform, "Moliendo café", p, Mathf.RoundToInt(p * 100f) + "%");
             yield return null;
         }
 
-        ProgressHUD.Clear();
+        GameEvents.ClearProgress(transform);
         pf.SetState(PortafilterState.Ground);
         pf.GetBusy = false;
         GetHasBeans = false;
         if (_beansInHopper != null) _beansInHopper.SetActive(false);
         _grinding = false;
+
+        GameEvents.Raise(Feedback.GrindEnd, transform);
+        GameEvents.CompleteStep(GameStep.Grind);
         PlayerHand.Instance.Say("¡Café molido!");
     }
 }

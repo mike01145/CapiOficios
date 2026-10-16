@@ -9,7 +9,7 @@ public class EspressoMachine : MonoBehaviour, IClickable
     [SerializeField] private float _extractSeconds = 8f;
     [SerializeField] private GameObject _coffeeStream;   // opcional: chorrito de café
 
-    private bool busy;
+    private bool _busy;
 
     private void Start()
     {
@@ -38,7 +38,7 @@ public class EspressoMachine : MonoBehaviour, IClickable
     // Conectalo al botón (UnityEvent del Highlightable del botón, o un Button de UI)
     public void StartExtraction()
     {
-        if (busy) return;
+        if (_busy) return;
         var hand = PlayerHand.Instance;
 
         var pf = _groupHead.GetPlaced as Portafilter;
@@ -57,28 +57,30 @@ public class EspressoMachine : MonoBehaviour, IClickable
 
     private IEnumerator Extract(Portafilter pf, Cup cup)
     {
-        busy = true;
+        _busy = true;
         pf.GetBusy = true;
         cup.GetBusy = true;
+        GameEvents.Raise(Feedback.ExtractStart, transform);
         if (_coffeeStream != null) _coffeeStream.SetActive(true);
 
         for (float t = 0f; t < _extractSeconds; t += Time.deltaTime)
         {
             float p = t / _extractSeconds;
-            ProgressHUD.Display("Extrayendo espresso", p, Mathf.RoundToInt(p * 100f) + "%");
+            GameEvents.ShowProgress(transform, "Extrayendo espresso", p, Mathf.RoundToInt(p * 100f) + "%");
             yield return null;
         }
 
-        ProgressHUD.Display("Extrayendo espresso", 1f, "100%");
+        GameEvents.ClearProgress(transform);
         if (_coffeeStream != null) _coffeeStream.SetActive(false);
 
         cup.AddEspresso();
         pf.SetState(PortafilterState.Spent);
         pf.GetBusy = false;
         cup.GetBusy = false;
-        busy = false;
+        _busy = false;
 
-        ProgressHUD.Clear();
+        GameEvents.Raise(Feedback.ExtractEnd, transform);
+        GameEvents.CompleteStep(GameStep.Extract);
         PlayerHand.Instance.Say("¡Espresso listo!");
     }
 }

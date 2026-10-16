@@ -35,7 +35,12 @@ public class Dispenser : MonoBehaviour, IClickable
                     var jug = held as MilkJug;
                     if (jug == null) hand.Say("Necesitás la jarra para cargar leche.");
                     else if (jug.GetMilk != MilkQuality.None) hand.Say("La jarra ya tiene leche.");
-                    else { jug.Fill(); hand.Say("Jarra cargada con leche."); }
+                    else
+                    {
+                        jug.Fill();
+                        GameEvents.Raise(Feedback.Fill, transform);
+                        hand.Say("Jarra cargada con leche.");
+                    }
                     break;
                 }
             case DispenserKind.Water:
@@ -43,7 +48,13 @@ public class Dispenser : MonoBehaviour, IClickable
                     var cup = held as Cup;
                     if (cup == null) hand.Say("Necesitás una taza para agregar agua caliente.");
                     else if (cup.GetHasWater) hand.Say("La taza ya tiene agua.");
-                    else { cup.AddWater(); hand.Say("Agregaste agua caliente."); }
+                    else
+                    {
+                        cup.AddWater();
+                        GameEvents.Raise(Feedback.Fill, transform);
+                        GameEvents.CompleteStep(GameStep.AddWater);
+                        hand.Say("Agregaste agua caliente.");
+                    }
                     break;
                 }
         }

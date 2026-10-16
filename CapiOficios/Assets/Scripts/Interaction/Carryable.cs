@@ -2,8 +2,6 @@ using UnityEngine;
 
 public enum ItemType { Beans, Portafilter, Tamper, Cup, MilkJug }
 
-// Cualquier objeto que se puede agarrar. Sirve tal cual para el Tamper y los granos;
-// Portafilter, Cup y MilkJug lo extienden con su estado.
 [RequireComponent(typeof(Highlightable))]
 public class Carryable : MonoBehaviour, IClickable
 {

@@ -30,7 +30,7 @@ public class SteamWand : ItemSlot
     protected override void OnUsedEmptyHanded()
     {
         var jug = GetPlaced as MilkJug;
-        if (jug == null) { PlayerHand.Instance.Say("Poné la jarra de leche bajo la varilla de vapor."); return; }
+        if (jug == null) { PlayerHand.Instance.Warn("Poné la jarra de leche bajo la varilla de vapor.", transform); return; }
 
         if (_heating) StopHeating(jug);
         else _routine = StartCoroutine(Heat(jug));
@@ -40,6 +40,7 @@ public class SteamWand : ItemSlot
     {
         _heating = true;
         jug.GetBusy = true;
+        GameEvents.Raise(Feedback.SteamStart, transform);
         if (_steamFx != null) _steamFx.Play();
 
         _currentTemp = jug.GetTemperature;
@@ -65,24 +66,29 @@ public class SteamWand : ItemSlot
         _routine = null;
         jug.GetBusy = false;
         if (_steamFx != null) _steamFx.Stop();
-        ProgressHUD.Clear();
+        GameEvents.ClearProgress(transform);
+        GameEvents.Raise(Feedback.SteamEnd, transform);
 
         jug.SetTemperature(_currentTemp, _foamMode);
 
         string t = Mathf.RoundToInt(_currentTemp) + "°C";
         var hand = PlayerHand.Instance;
         if (_currentTemp < _minGood) hand.Say("Todavía está fría (" + t + "). Seguí calentando.");
-        else if (_currentTemp <= _maxGood) hand.Say("¡Leche en su punto! (" + t + ")");
+        else if (_currentTemp <= _maxGood)
+        {
+            GameEvents.CompleteStep(GameStep.HeatMilk);
+            hand.Say("¡Leche en su punto! (" + t + ")");
+        }
         else hand.Say("¡Se quemó la leche (" + t + ")! Descartala en el tacho.");
     }
 
     private void ShowTemperature()
     {
         Color c;
-        if (_currentTemp < _minGood) c = new Color(0.35f, 0.6f, 1f);        // fría
+        if (_currentTemp < _minGood) c = new Color(0.35f, 0.6f, 1f); // fría
         else if (_currentTemp <= _maxGood) c = new Color(0.3f, 0.75f, 0.35f); // en su punto
-        else c = new Color(0.9f, 0.25f, 0.25f);                            // demasiado caliente
+        else c = new Color(0.9f, 0.25f, 0.25f); // demasiado caliente
 
-        ProgressHUD.Display("Calentando leche", _currentTemp / _maxTemp, Mathf.RoundToInt(_currentTemp) + "°C", c);
+        GameEvents.ShowProgress(transform, "Calentando leche", _currentTemp / _maxTemp, Mathf.RoundToInt(_currentTemp) + "°C", c);
     }
 }

@@ -39,6 +39,7 @@ public class Highlightable : MonoBehaviour
     {
         if (_hovered == value) return;
         _hovered = value;
+        GameEvents.SetHovered(transform, value);
         (value ? _onHoverEnter : _onHoverExit)?.Invoke();
         Refresh();
     }
@@ -46,13 +47,12 @@ public class Highlightable : MonoBehaviour
     public void SetSelected(bool value)
     {
         if (_hovered == value) return;
-        _selected = value;
-        (value ? _onHoverEnter : _onHoverExit)?.Invoke();
         Refresh();
     }
 
     public void Click()
     {
+        GameEvents.Raise(Feedback.Click, transform);
         foreach (var c in GetComponents<IClickable>()) c.OnClicked();
         _onClick?.Invoke();
     }
@@ -89,11 +89,7 @@ public class Highlightable : MonoBehaviour
             if (!HasColorProperty(m, _colorProperty))
             {
                 if (!warned)
-                {
                     warned = true;
-                    Debug.LogWarning($"[Highlightable] El material '{(m != null ? m.name : "?")}' no tiene una propiedad de color llamada '{_colorProperty}'. " +
-                                     "Poné en 'Color Property' el nombre (Reference) real de la propiedad en el shader, o usá el modo Outline.", this);
-                }
                 continue;
             }
 
@@ -113,13 +109,16 @@ public class Highlightable : MonoBehaviour
 
     private void OnDisable()
     {
+
+        if (_hovered) GameEvents.SetHovered(transform, false);
         _hovered = false;
         _selected = false;
         if (_applied)
         {
             _applied = true; // fuerza el apagado
             _applied = false;
-            if (_mode == Mode.Outline) ApplyOutline(false); else ApplyTint(false);
+            if (_mode == Mode.Outline) ApplyOutline(false);
+            else ApplyTint(false);
         }
     }
 }

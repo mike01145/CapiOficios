@@ -9,10 +9,6 @@ public class PlayerHand : MonoBehaviour
     [SerializeField] private Camera _cam; // vacio = Main Camera
     [SerializeField] private float _liftTowardCamera = 0.15f; // el objeto "flota" un poco hacia la camara
     [SerializeField] private float _followSharpness = 25f;
-    [Header("Mensajes")]
-    [SerializeField] private TextMeshProUGUI _hintText;
-    [SerializeField] private float _hintSeconds = 2.2f;
-
     public Carryable GetHeld { get; private set; }
 
     private float _depth;
@@ -22,7 +18,6 @@ public class PlayerHand : MonoBehaviour
     {
         Instance = this;
         if (_cam == null) _cam = Camera.main;
-        if (_hintText != null) _hintText.text = "";
     }
 
     public bool Pick(Carryable c)
@@ -31,11 +26,18 @@ public class PlayerHand : MonoBehaviour
         GetHeld = c;
         _depth = Vector3.Dot(c.transform.position - _cam.transform.position, _cam.transform.forward);
         c.OnPickedUp();
+        GameEvents.SetHeld(c.name);
+        GameEvents.Raise(Feedback.Pickup, c.transform);
+        Say("Agarraste: " + c.name + " (click derecho para soltar)");
         return true;
     }
 
     // Suelta lo que sostiene SIN moverlo (lo usan los slots al apoyarlo)
-    public void ReleaseHeld() { GetHeld = null; }
+    public void ReleaseHeld()
+    {
+        GetHeld = null;
+        GameEvents.SetHeld("");
+    }
 
     // Lo que sostiene desaparece (por ejemplo, los granos al cargar el molinillo)
     public void Consume()
@@ -44,6 +46,7 @@ public class PlayerHand : MonoBehaviour
         var c = GetHeld;
         GetHeld = null;
         Destroy(c.gameObject);
+        GameEvents.SetHeld("");
     }
 
     public void ReturnHeldHome()
@@ -52,6 +55,8 @@ public class PlayerHand : MonoBehaviour
         var c = GetHeld;
         GetHeld = null;
         c.ReturnHome();
+        GameEvents.SetHeld("");
+        GameEvents.Raise(Feedback.Return, c.transform);
     }
 
     // Botón de UI opcional para celulares (no hay click derecho)
@@ -61,20 +66,11 @@ public class PlayerHand : MonoBehaviour
         ReturnHeldHome();
         Say("Lo dejaste en su lugar.");
     }
-
-    public void Say(string message)
+    public void Say(string message) => GameEvents.ShowMessage(message);
+    public void Warn(string message, Transform source = null)
     {
-        if (_hintText == null) return;
-        if (_hintRoutine != null) StopCoroutine(_hintRoutine);
-        _hintRoutine = StartCoroutine(HintRoutine(message));
-    }
-
-    private IEnumerator HintRoutine(string message)
-    {
-        _hintText.text = message;
-        yield return new WaitForSecondsRealtime(_hintSeconds);
-        _hintText.text = "";
-        _hintRoutine = null;
+        GameEvents.ShowMessage(message);
+        GameEvents.Raise(Feedback.Refused, source);
     }
 
     private void Update()

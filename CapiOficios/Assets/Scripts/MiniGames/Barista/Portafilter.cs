@@ -17,7 +17,9 @@ public class Portafilter : Carryable
     {
         if (_looseCoffee != null) _looseCoffee.SetActive(GetCurrentState == PortafilterState.Ground);
         if (_tampedCoffee != null)
-            _tampedCoffee.SetActive(GetCurrentState == PortafilterState.Tamped || GetCurrentState == PortafilterState.Locked || GetCurrentState == PortafilterState.Spent);
+            _tampedCoffee.SetActive(GetCurrentState == PortafilterState.Tamped
+            || GetCurrentState == PortafilterState.Locked
+            || GetCurrentState == PortafilterState.Spent);
     }
 
     public override void OnClicked()
@@ -41,6 +43,8 @@ public class Portafilter : Carryable
                 SetState(PortafilterState.Tamped);
                 hand.ReleaseHeld();
                 tamper.ReturnHome();   // el tamper vuelve solo a su lugar
+                GameEvents.Raise(Feedback.Tamp, transform);
+                GameEvents.CompleteStep(GameStep.Tamp);
                 hand.Say("¡Café compactado y nivelado!");
                 break;
             default:

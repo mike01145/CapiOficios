@@ -27,11 +27,14 @@ public class ServePoint : MonoBehaviour, IClickable
             hand.ReleaseHeld();
             cup.ResetState();
             cup.ReturnHome();
+            GameEvents.Raise(Feedback.Delivered, transform);
+            GameEvents.CompleteStep(GameStep.Deliver);
             hand.Say("¡Pedido entregado: " + _order + "!");
             _onDelivered?.Invoke();
         }
         else
         {
+            GameEvents.Raise(Feedback.WrongDrink, transform);
             hand.Say("Eso no es un " + _order + ". Revisá los ingredientes o descartalo.");
             _onWrongDrink?.Invoke();
         }

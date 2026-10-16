@@ -13,6 +13,7 @@ public class TrashCan : MonoBehaviour, IClickable
         item.ResetState();
         hand.ReleaseHeld();
         item.ReturnHome();
+        GameEvents.Raise(Feedback.Discard, transform);
         hand.Say("Descartado. Volvió a su lugar, vacío.");
     }
 }
