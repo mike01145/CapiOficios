@@ -12398,6 +12398,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Menu_Board
       objectReference: {fileID: 0}
+    - target: {fileID: 3067338635385862092, guid: 5917caaf620aa184689ef525bb042504, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -31779,8 +31783,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "La leche entera se calienta \npara agrgar al caf\xE9 y \ncrear otros tipos
-    de bebidas"
+  m_text: "Este es el caf\xE9 molido. \nVa en el portafiltro "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
