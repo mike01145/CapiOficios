@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Ponelo en el mismo objeto que el RawImage donde querés ver el modelo 3D
 [RequireComponent(typeof(RawImage))]
 public class ModelViewer : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IScrollHandler
 {

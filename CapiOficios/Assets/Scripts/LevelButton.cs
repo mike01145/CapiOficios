@@ -2,12 +2,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-// Ponelo en cada botón de nivel del menú
 [RequireComponent(typeof(Button))]
 public class LevelButton : MonoBehaviour
 {
     [SerializeField] private Category _category;
-    [SerializeField, Range(1, ProgressManager.LevelsPerCategory)] private int _level = 1;
+    [SerializeField, Range(1, 3)] private int _level = 1;
     [SerializeField] private string _sceneToLoad;       // escena del nivel (vacío = no carga nada)
 
     [Header("Opcionales")]

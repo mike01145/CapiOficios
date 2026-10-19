@@ -2,7 +2,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Ponelo en cada botón de la IZQUIERDA
 public class ConnectorSource : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
 {
     public int id;
