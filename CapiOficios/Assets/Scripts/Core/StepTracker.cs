@@ -14,7 +14,6 @@ public class StepDef
 public class StepTracker : MonoBehaviour
 {
     [SerializeField] private List<StepDef> _listSteps = new();
-
     public event EventHandler OnChanged;
     public IReadOnlyList<StepDef> Steps => _listSteps;
 

@@ -4,7 +4,6 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 #endif
 
-// Ponelo en un objeto vacío de la escena (o en la cámara)
 public class HoverSelector : MonoBehaviour
 {
     [SerializeField] private Camera _cam;                 // vacío = Main Camera

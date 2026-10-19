@@ -3,7 +3,6 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-// Muestra los avisos del juego y (opcional) qué llevás en la mano.
 public class MessageUI : MonoBehaviour
 {
     [SerializeField] private TMP_Text _messageText;

@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Donde se entrega el pedido (por ejemplo, la barra o la caja)
 [RequireComponent(typeof(Highlightable))]
 public class ServePoint : MonoBehaviour, IClickable
 {

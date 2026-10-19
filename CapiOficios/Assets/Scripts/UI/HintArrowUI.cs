@@ -10,7 +10,7 @@ public class HintArrow : MonoBehaviour
     [SerializeField] private float _bounceSpeed = 6f;
     [Tooltip("Tamaño de la flecha en el mundo.")]
     [SerializeField] private float _size = 0.12f;
-    [SerializeField] private Color _color = new Color(1f, 0.8f, 0.2f);
+    [SerializeField] private Color _color = new(1f, 0.8f, 0.2f);
     [Tooltip("Opcional: un sprite de flecha apuntando hacia abajo, con el pivote en la punta.")]
     [SerializeField] private Sprite _arrowSprite;
 

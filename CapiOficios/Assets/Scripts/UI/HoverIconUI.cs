@@ -3,7 +3,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Muestra el ícono (HoverIcon) del objeto sobre el que está el mouse, siguiéndolo en pantalla.
 public class HoverIconUI : MonoBehaviour
 {
     [SerializeField] private RectTransform _iconRoot;   // lo que se muestra y se mueve (con Image y/o texto adentro)

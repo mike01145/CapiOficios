@@ -8,7 +8,7 @@ public class ProgressManager : MonoBehaviour
     [Header("Debug")]
     [SerializeField] private bool unlockAll = false;
 
-    public const int LevelsPerCategory = 3;
+    [SerializeField] private int LevelsPerCategory = 3;
 
     private static ProgressManager _instance;
 
@@ -30,6 +30,7 @@ public class ProgressManager : MonoBehaviour
     public event Action OnProgressChanged;
     // Nivel que se está jugando (para saber cuál marcar como completado)
     public Category GetCurrentCategory { get; private set; }
+    public static int GetLevelsPerCategory => Instance.LevelsPerCategory;
     public int GetCurrentLevel { get; private set; } = 1;
 
     private void Awake()

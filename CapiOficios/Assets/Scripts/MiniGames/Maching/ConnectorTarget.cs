@@ -2,8 +2,6 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Ponelo en cada destino de la DERECHA (con el mismo id que su botón).
-// Tiene que tener una Image (o cualquier Graphic) para poder parpadear.
 public class ConnectorTarget : MonoBehaviour
 {
     public int id;
