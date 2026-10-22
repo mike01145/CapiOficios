@@ -30,7 +30,6 @@ public class MatchingGame : MonoBehaviour
     [Header("Estilo")]
     [SerializeField] private float _thickness = 12f;
     [SerializeField] private float _headSize = 40f;
-    [SerializeField] private float _correctDelay = 0.35f;  // cuánto se ve la flecha verde antes de desaparecer
     [SerializeField] private Color _dragColor = Color.white;
     [SerializeField] private Color _correctColor = new(0.30f, 0.65f, 0.35f);
     [SerializeField] private Color _wrongColor = new(0.85f, 0.25f, 0.25f);
@@ -145,7 +144,7 @@ public class MatchingGame : MonoBehaviour
 
         _remainingInRound = sources.Count;
     }
-    // Fisher-Yates
+    // cambio de orden de los botones
     private static void Shuffle<T>(List<T> list)
     {
         for (int i = list.Count - 1; i > 0; i--)
@@ -154,6 +153,7 @@ public class MatchingGame : MonoBehaviour
             (list[i], list[j]) = (list[j], list[i]);
         }
     }
+    // Mueve los botones para que sus centros queden en posiciones aleatorias
     private void ShuffleSlots<T>(List<T> items) where T : Component
     {
         if (items.Count < 2) return;
