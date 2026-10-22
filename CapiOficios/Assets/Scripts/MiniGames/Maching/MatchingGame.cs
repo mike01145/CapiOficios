@@ -32,8 +32,8 @@ public class MatchingGame : MonoBehaviour
     [SerializeField] private float _headSize = 40f;
     [SerializeField] private float _correctDelay = 0.35f;  // cuánto se ve la flecha verde antes de desaparecer
     [SerializeField] private Color _dragColor = Color.white;
-    [SerializeField] private Color _correctColor = new Color(0.30f, 0.65f, 0.35f);
-    [SerializeField] private Color _wrongColor = new Color(0.85f, 0.25f, 0.25f);
+    [SerializeField] private Color _correctColor = new(0.30f, 0.65f, 0.35f);
+    [SerializeField] private Color _wrongColor = new(0.85f, 0.25f, 0.25f);
 
     [Header("Eventos")]
     [SerializeField] private UnityEvent _onCompleted;
@@ -52,12 +52,16 @@ public class MatchingGame : MonoBehaviour
     private int _fails;
     private bool _locked;
 
+    private readonly Dictionary<RectTransform, Vector3> _originalCenter = new();
     private readonly Queue<ConnectorSource> pending = new();
     private List<ConnectorTarget> roundTargets = new();
     private void Awake()
     {
         _triangle = _arrowSprite != null ? _arrowSprite : CreateTriangleSprite();
         if (_failPanel != null) _failPanel.SetActive(false);
+    }
+    void Start()
+    {
         ShowRound(0);
     }
 
@@ -78,6 +82,7 @@ public class MatchingGame : MonoBehaviour
         else list.AddRange(FindObjectsByType<T>(FindObjectsInactive.Include, FindObjectsSortMode.None));
         return list;
     }
+    private static Vector3 WorldCenter(RectTransform rt) => rt.TransformPoint(rt.rect.center);
     private static int CompareHierarchy(Transform a, Transform b)
     {
         var pa = SiblingPath(a);
@@ -116,6 +121,10 @@ public class MatchingGame : MonoBehaviour
         roundTargets = InRound<ConnectorTarget>(index);
         pending.Clear();
 
+        // Cambia el orden de los botones.
+        ShuffleSlots(sources);
+        ShuffleSlots(roundTargets);
+
         int visible = visibleAtOnce <= 0 ? sources.Count : Mathf.Min(visibleAtOnce, sources.Count);
         var visibleIds = new HashSet<int>();
 
@@ -136,6 +145,40 @@ public class MatchingGame : MonoBehaviour
 
         _remainingInRound = sources.Count;
     }
+    // Fisher-Yates
+    private static void Shuffle<T>(List<T> list)
+    {
+        for (int i = list.Count - 1; i > 0; i--)
+        {
+            int j = Random.Range(0, i + 1);
+            (list[i], list[j]) = (list[j], list[i]);
+        }
+    }
+    private void ShuffleSlots<T>(List<T> items) where T : Component
+    {
+        if (items.Count < 2) return;
+        CacheCenters(items);
+
+        var centers = new List<Vector3>();
+        foreach (var it in items) centers.Add(_originalCenter[(RectTransform)it.transform]);
+        Shuffle(centers);
+
+        for (int i = 0; i < items.Count; i++)
+        {
+            var rt = (RectTransform)items[i].transform;
+            // Mover el botón para que su CENTRO caiga en el slot elegido
+            rt.position += centers[i] - WorldCenter(rt);
+        }
+    }
+    private void CacheCenters<T>(List<T> items) where T : Component
+    {
+        foreach (var it in items)
+        {
+            var rt = (RectTransform)it.transform;
+            if (!_originalCenter.ContainsKey(rt)) _originalCenter[rt] = WorldCenter(rt);
+        }
+    }
+
     private void OnPairRemoved(Vector3 freedSourcePos, Vector3 freedTargetPos)
     {
         _remainingInRound--;
