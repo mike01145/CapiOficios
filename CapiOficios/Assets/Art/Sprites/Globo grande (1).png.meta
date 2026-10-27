@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 78957fa5ef06df74bb973a9caae643e6
+guid: f6d6a7074ba98214d8979a9767c23b90
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Globo chico_0
+      name: Globo grande (1)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 399
-        height: 420
+        width: 687
+        height: 467
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,8 +125,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce3cfe0def289d74fb4af2c7bb251e77
-      internalID: 1070649946
+      spriteID: cda30b2faaf0ec54b9466254454a58c3
+      internalID: 2077056645
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: badd842998abfe74685e7d611fc14e27
+    spriteID: 87b437371457fcd4a980c96d1ebd9094
     internalID: 0
     vertices: []
     indices: 
@@ -147,7 +147,7 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Globo chico_0: 1070649946
+      Globo grande (1)_0: 2077056645
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
