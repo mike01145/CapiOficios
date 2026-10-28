@@ -21,6 +21,8 @@ public class ButtonSuccessFeedback : MonoBehaviour
     {
         _button = GetComponent<Button>();
         if (_target == null) _target = GetComponent<Image>();
+
+        _button.onClick.AddListener(Play);
     }
 
     // Conectá ESTE método al OnClick del botón
@@ -33,7 +35,6 @@ public class ButtonSuccessFeedback : MonoBehaviour
     private IEnumerator Routine()
     {
         _playing = true;
-        _button.interactable = false;   // evita doble clic
 
         Color original = _target.color;
         Vector3 baseScale = transform.localScale;
@@ -53,7 +54,6 @@ public class ButtonSuccessFeedback : MonoBehaviour
             _target.color = original;
             transform.localScale = baseScale;
         }
-        _button.interactable = true;
         _playing = false;
     }
 
