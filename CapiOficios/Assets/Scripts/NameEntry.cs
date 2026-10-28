@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -11,8 +12,7 @@ public class NameEntry : MonoBehaviour
 
     [Header("Opciones")]
     [SerializeField] private int _maxLength = 20;
-    [SerializeField] private UnityEvent _onNameConfirmed;
-
+    [SerializeField] private UnityEvent _onNameConfirmed; // opcional: para pasar a la siguiente escena
     private void Start()
     {
         _inputFieldName.characterLimit = _maxLength;

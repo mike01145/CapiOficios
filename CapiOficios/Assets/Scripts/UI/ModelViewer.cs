@@ -22,10 +22,16 @@ public class ModelViewer : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     private RenderTexture _rt;
     private Transform _active;
     private Quaternion[] _startRotations;
+    private bool _initialized;
     private bool _dragging;
     private float _idleTimer;
-    private void Awake()
+    private int _currentIndex = -1;
+    private void Awake() => Init();
+    private void Init()
     {
+        if (_initialized) return;
+        _initialized = true;
+
         _display = GetComponent<RawImage>();
         _startRotations = new Quaternion[_models.Length];
         for (int i = 0; i < _models.Length; i++)
@@ -34,28 +40,73 @@ public class ModelViewer : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             _startRotations[i] = _models[i].localRotation;
             _models[i].gameObject.SetActive(false);
         }
+        _viewCamera.enabled = false;
     }
-    private void Start()
+    private void OnEnable()
     {
-        CreateRenderTexture();
-    }
-    private void CreateRenderTexture()
-    {
-        Rect r = ((RectTransform)transform).rect;
-        float scale = _resolutionScale * (Application.isMobilePlatform ? 1f : Mathf.Min(2f, Screen.dpi > 0 ? Screen.dpi / 96f : 1f));
-        int w = Mathf.Max(64, Mathf.RoundToInt(r.width * scale));
-        int h = Mathf.Max(64, Mathf.RoundToInt(r.height * scale));
-
-        _rt = new RenderTexture(w, h, 24, RenderTextureFormat.ARGB32) { antiAliasing = 2 };
+        Init();
+        EnsureRenderTexture();
         _viewCamera.targetTexture = _rt;
+        ShowModel(_currentIndex);   // restaura el modelo si ya había uno elegido
+    }
+    private void OnDisable()
+    {
+        if (_viewCamera != null)
+        {
+            _viewCamera.enabled = false;
+            if (_viewCamera.targetTexture == _rt) _viewCamera.targetTexture = null;
+        }
+        if (_active != null) _active.gameObject.SetActive(false);
+        _active = null;
+
+        if (_rt != null)
+        {
+            if (_display != null) _display.texture = null;
+            _rt.Release();
+            Destroy(_rt);
+            _rt = null;
+        }
+    }
+    private void OnDestroy()
+    {
+        if (_viewCamera != null && _viewCamera.targetTexture == _rt)
+            _viewCamera.targetTexture = null;
+
+        if (_rt != null)
+        {
+            if (_display != null) _display.texture = null;
+            _rt.Release();
+            Destroy(_rt);
+            _rt = null;
+        }
+    }
+    private void EnsureRenderTexture()
+    {
+        if (_rt != null) return;
+
+        Canvas.ForceUpdateCanvases();   // asegura que el RectTransform ya tenga su tamaño real
+        Rect r = ((RectTransform)transform).rect;
+        float scale = _resolutionScale;
+
+        int w = Mathf.Clamp(Mathf.RoundToInt(r.width * scale), 64, 1024);
+        int h = Mathf.Clamp(Mathf.RoundToInt(r.height * scale), 64, 1024);
+
+        _rt = new RenderTexture(w, h, 16, RenderTextureFormat.ARGB32) { antiAliasing = 1 };
         _viewCamera.aspect = (float)w / h;
         _display.texture = _rt;
     }
+
     // Llamalo cuando cambia el paso: ShowModel(indiceDelPaso). Con -1 (o índice sin modelo) se oculta.
     public void ShowModel(int index)
     {
+        Init();
+        _currentIndex = index;
+
         if (_active != null) _active.gameObject.SetActive(false);
         _active = null;
+
+        // Si el viewer está inactivo, solo guardamos el índice; se aplica en OnEnable
+        if (!isActiveAndEnabled) return;
 
         bool valid = index >= 0 && index < _models.Length && _models[index] != null;
         _display.enabled = valid;
@@ -88,8 +139,5 @@ public class ModelViewer : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         if (!_allowZoom) return;
         _viewCamera.fieldOfView = Mathf.Clamp(_viewCamera.fieldOfView - e.scrollDelta.y * 2f, _minFov, _maxFov);
     }
-    private void OnDestroy()
-    {
-        if (_rt != null) { _viewCamera.targetTexture = null; _rt.Release(); Destroy(_rt); }
-    }
+
 }

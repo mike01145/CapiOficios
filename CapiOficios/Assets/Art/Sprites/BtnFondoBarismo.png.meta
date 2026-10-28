@@ -1,0 +1,2800 @@
+fileFormatVersion: 2
+guid: 3f309c7b25382084c8932e3c2855fa8d
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BtnFondoBarismo_0
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 70
+        width: 594
+        height: 696
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3d3837f34b27b64da7ffec5df0fece8
+      internalID: -1418605653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 783
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7498881d1aa734940ac9dbf5df2d7540
+      internalID: -1460094889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_2
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 786
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63ff0530eb37f754b8a809cb90e48236
+      internalID: -683665274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_3
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 786
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddbd99ac034a2b444ac45bfb06ab7c59
+      internalID: 835741565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_4
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 787
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23cb0a54d8f4c274a8037b9604957189
+      internalID: 527396061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_5
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 786
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a9e2fdd3139b5b4e92de61376cb8843
+      internalID: 1561379775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_6
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 783
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d8529782c2226443b78039f94d1e410
+      internalID: 1427673513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_7
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 788
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beb998878c8cf8d4ebd34e426f2a0618
+      internalID: -236237321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_8
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 787
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e9899214660d4944b9628e1cb34f45a
+      internalID: 1175338708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_9
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 784
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f1e9af484349ba4491b7060f0713488
+      internalID: -1191785260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_10
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 782
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87cd24fe9237ba54bb044f82f28325c8
+      internalID: 547152033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_11
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 787
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71d328fae0f39ef4fa81be11ad2c562e
+      internalID: 643783724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_12
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 787
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31a969f6214f29a4496bcb33b14cb3ef
+      internalID: 685899562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_13
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 786
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df737b0b446a90548bdda2c54c6715ce
+      internalID: 568316425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_14
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 787
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fb409b2c0751c548a6e4190b61e91d8
+      internalID: 1703218234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_15
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 784
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 541e18d2e12adaa438e49065cf6c173b
+      internalID: -1882759764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_16
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 785
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb9eea7b829c1a54ea2f225695b17cc3
+      internalID: -2036206367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_17
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 786
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cf1e154ee0a1e5419f8d7bf469df941
+      internalID: -1240715773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_18
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 785
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcc4950105a34f944a27295c0736db50
+      internalID: -299108805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_19
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 786
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7876418fd415dd2439ea7c7bf6cf9389
+      internalID: 939243462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_20
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 783
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9a841f9cdef0a84883abad2f031a969
+      internalID: 1524437100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_21
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 788
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12cab6f34963c2f44a3c993a3e030513
+      internalID: -1354468306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_22
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 787
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8dbca03ae8cc314fa60fc5523613f97
+      internalID: -1048250688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_23
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 784
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c171b27c4ed23ba45a932e3f193e9f21
+      internalID: 90348792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_24
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 782
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3fa9f343c145b14385a3d992f3f9fd1
+      internalID: 1147773844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_25
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 787
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b8efdbb70aa7234dac0c16cf5d05618
+      internalID: -1039280455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_26
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 787
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3548803444ffe14781abebf706472e2
+      internalID: 1538925339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_27
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 786
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d910d66478d9fd04ba33f9cdb442e1a1
+      internalID: -150613982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_28
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 787
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9d182142cc9fe8429ed3372a7689faa
+      internalID: -1604712306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_29
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 784
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44d2b8d8d8eca304b96453bdca97bcf9
+      internalID: 1314453258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_30
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 785
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4100a870395bdd14eb4a3880853418d1
+      internalID: 1060613193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_31
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 786
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 680efc8f54f5a004d894985cf6a83a3f
+      internalID: -2044791947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_32
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 787
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c154abbc97eb6741825f2f71ce3b826
+      internalID: 1567518149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_33
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 785
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f6551f2d9f67444b897eab2beba4cef
+      internalID: 1819123012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_34
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 786
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a89fd8501c4f714086c4d0a416e5054
+      internalID: -1074501159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_35
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 784
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5fb4748be2d2aa45aaa7d946870716d
+      internalID: -437421883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_36
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 782
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00dc21cac1dfa22459d58bc6adc17dab
+      internalID: 1026904319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_37
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 747
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a52c34918fd1d504cbead681dce79ae8
+      internalID: 1377713291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_38
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 734
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f2403cfd01e4bb46868a167d993e002
+      internalID: -1552148641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_39
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 735
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc39e92885fd2444196328842fdfda08
+      internalID: -2022482413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 721
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 041b1d7bcdf4cf6459b376dfa474fc7e
+      internalID: -1232889361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_41
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 729
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e493cbe0f324b9499daccfc47740a27
+      internalID: 1793583646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_42
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 722
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 900d7c29f6fbe4044a2304bf918da1ae
+      internalID: 1852920039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_43
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 716
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3952de6a16626b41b19eb2da8b56589
+      internalID: -780944876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_44
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 710
+        width: 10
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bcdc57a20af0d645bccc3182e1a16da
+      internalID: 806227924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 691
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d2ba7e46e9048f46be2c21a034e7787
+      internalID: -1728516539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_46
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 697
+        width: 10
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee10cdfef9eb6264dac76d78f33f5322
+      internalID: 2076272071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_47
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 626
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21fecda38de81ef49b80ae391286361f
+      internalID: -1796773834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 597
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8912b76ef564d624baad567444d36adc
+      internalID: -370384876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_49
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 604
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a128d56666c28a4489d4c4a77675a25
+      internalID: 2101595556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_50
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 596
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e628eade415c0694e91910500714af33
+      internalID: 1981374532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_51
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 582
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b1fc73eab3bdd24196304f51f68064f
+      internalID: 1992769242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_52
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 586
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c20c90074cd36d4e924b32a79b24d36
+      internalID: 1878723170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_53
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 576
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b41c3e650de7e34f8a956daa10076ac
+      internalID: 1915295780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 563
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a427a67d5979494ab5b7c990d1c4271
+      internalID: 1523277522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_55
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 550
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f961d399ef1f3a478da3ebfc8d3c030
+      internalID: -553170655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_56
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 541
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a052d38eed1dfbd4bb718c07f59b7c25
+      internalID: -1026234636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_57
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 511
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6e213b417246a94697735e6691569ee
+      internalID: -543241819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_58
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 500
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ff48b7cab4834649bb786fd5bb6ea5f
+      internalID: -598736110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_59
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 491
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f8cef4648d46ad4c889662b4d30084a
+      internalID: -1941585060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 478
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f3fd02ddca500d4eb530c5c9ad2e172
+      internalID: 2078530450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_61
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 474
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78c842d99dd9e7642befc6f39d708c00
+      internalID: -561078575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_62
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 471
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b58e97601d255a046aeb34ba5b1cb006
+      internalID: -2040441051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_63
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 460
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e031a6cad1a1fc45a21b83bd652a1d0
+      internalID: 1603710190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_64
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 454
+        width: 10
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1419b68b860dd2a438206a3046a3119c
+      internalID: 5629854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_65
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 435
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db230ca2d3e6f6e468c9f7bbd8de4245
+      internalID: -1136371033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_66
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 370
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f09b4ab40f1d3794da6eeb2d908bf690
+      internalID: 1443858939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_67
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 341
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 252d418726edff543b7ccadccadc1655
+      internalID: 1282445171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_68
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 348
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d5051967159d2441bf25d5862fa268c
+      internalID: -104705999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_69
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 340
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c87208096fcd9e847ae0deeac5339440
+      internalID: -1278663587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_70
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 326
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a490de49924a96c49bab5a4fa283fde2
+      internalID: -45410060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_71
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 330
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a02cc0ac98cfb2746bceebbff0703794
+      internalID: 600577002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d03b77a63ab43b4d84f90546b67e978
+      internalID: 1107469836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_73
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 307
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee79a3d7a37b956448a29b0da6a72926
+      internalID: 1715918898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_74
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 294
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d73cabf0e1d8b0408e9aa0414854890
+      internalID: 892491310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_75
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 285
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74bb54a97b3fed743abeeb358fd864a5
+      internalID: 168092395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_76
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 255
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7284855e9ce741449b492f084e46f848
+      internalID: 1876605811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_77
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 244
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d01e40bb25af7044ac5db86da219387
+      internalID: 2007402599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_78
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 235
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3618093029f47894394aaba8a7de2758
+      internalID: 765513056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_79
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 222
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6be10103f0e92334ca6b3d585b54a1e4
+      internalID: -1776460504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_80
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 218
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c7a4d697e41ade4e9a6e8eb1380cb0c
+      internalID: -996969279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_81
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 215
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 206e78df68cac40408fd42f23a926d46
+      internalID: 673509855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_82
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 204
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e55e271cd8cde047acdcc997f1db57e
+      internalID: -1678122920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_83
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 198
+        width: 10
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90d6eccd63d46b94cab16cfef39edfa0
+      internalID: -1881509392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_84
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 179
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 768ab0f65ba86ff4f89277fdbd10804a
+      internalID: -931274050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_85
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 114
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f808abbf3eeadd42ac2512537bc469b
+      internalID: 1429851806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_86
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 85
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aaf02c6e3b53054c8d6e744a80dab4d
+      internalID: -663739943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_87
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 92
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2401ec3ba0eb89a4b8299a253aee293e
+      internalID: 1266385148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_88
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 72
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40776cc70ff761c49beb05edf1ccf2fc
+      internalID: 243300982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_89
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 74
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b92a6aa21d1c924ba1bf378164f8760
+      internalID: -60472652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_90
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 63
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06a44c54921ee42408c5d538ff6d0541
+      internalID: 1667616462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_91
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6394e350bc2b4a649b66bfb4346a57fd
+      internalID: 2069570923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_92
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 0
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 125ad0e7abf4fda42917ad8d9c3efd09
+      internalID: -2092509908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_93
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 0
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f9831646de8730419e8cf0fa4499bee
+      internalID: -105965502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_94
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 2
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e59272f3c11cce4f8102f38606fd9b4
+      internalID: -2040851612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_95
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 0
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ad072c3befdb7c4396dce902afae4d4
+      internalID: -1055335937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_96
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 0
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0d734a27664acc49999ef1dd6f780a2
+      internalID: -1432055037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_97
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 0
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c69ce34394effaf4fabca3c49f29bd7e
+      internalID: 1238532863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_98
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 0
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a6bed59ef609f94cacc85aabd4534ca
+      internalID: 457849367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_99
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 0
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30fff3cbaa1c81b4bba1f8e0e6ab9c8d
+      internalID: 251801604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_100
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02b06716168823141aa20bde9f941f0b
+      internalID: -1368630523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_101
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 0
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b84cd10518dd7084a887cc1838135400
+      internalID: 199073167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_102
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 0
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3045ce42209491b4aafe193429e876c1
+      internalID: -1280150051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_103
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ec41b0dd9434204691234c1d949b987
+      internalID: -110612012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_104
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 0
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12bfc6328b5bde645acfa3c6532bf8e7
+      internalID: 542953233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_105
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 2
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01cb0752e0ca47949bb5784cc887cc8a
+      internalID: 125342463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_106
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 0
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c93be354efa8f354badfd016915d3615
+      internalID: -615360044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_107
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 0
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f77adfdd5a6fa054ebc29100ed741829
+      internalID: -1102659906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_108
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 0
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aae15fe26c6f3ed4990cc1dfc6a0b7ca
+      internalID: -1583700283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_109
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 0
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3cedc0b59ae92540882ed67609ba00e
+      internalID: -330345337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_110
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 0
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fb4e5639c0b0124e8ca6c1b966860c4
+      internalID: -1076043977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_111
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 112226272bfcf6b4688d1605f242735c
+      internalID: -970028466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_112
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 0
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84cde60e34eab3e48a07cf730bd051aa
+      internalID: -1080643541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_113
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 0
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f524274cae2f3c4ba93edaee32939d0
+      internalID: 110197588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_114
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 0
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06471272077be1a4aa5010aff3601216
+      internalID: 1295628429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoBarismo_115
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 0
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa17af9f42ee28044b508ce19fef9068
+      internalID: -572694581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: af98df2df6c99f74390c6f5309614676
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      BtnFondoBarismo_0: -1418605653
+      BtnFondoBarismo_1: -1460094889
+      BtnFondoBarismo_10: 547152033
+      BtnFondoBarismo_100: -1368630523
+      BtnFondoBarismo_101: 199073167
+      BtnFondoBarismo_102: -1280150051
+      BtnFondoBarismo_103: -110612012
+      BtnFondoBarismo_104: 542953233
+      BtnFondoBarismo_105: 125342463
+      BtnFondoBarismo_106: -615360044
+      BtnFondoBarismo_107: -1102659906
+      BtnFondoBarismo_108: -1583700283
+      BtnFondoBarismo_109: -330345337
+      BtnFondoBarismo_11: 643783724
+      BtnFondoBarismo_110: -1076043977
+      BtnFondoBarismo_111: -970028466
+      BtnFondoBarismo_112: -1080643541
+      BtnFondoBarismo_113: 110197588
+      BtnFondoBarismo_114: 1295628429
+      BtnFondoBarismo_115: -572694581
+      BtnFondoBarismo_12: 685899562
+      BtnFondoBarismo_13: 568316425
+      BtnFondoBarismo_14: 1703218234
+      BtnFondoBarismo_15: -1882759764
+      BtnFondoBarismo_16: -2036206367
+      BtnFondoBarismo_17: -1240715773
+      BtnFondoBarismo_18: -299108805
+      BtnFondoBarismo_19: 939243462
+      BtnFondoBarismo_2: -683665274
+      BtnFondoBarismo_20: 1524437100
+      BtnFondoBarismo_21: -1354468306
+      BtnFondoBarismo_22: -1048250688
+      BtnFondoBarismo_23: 90348792
+      BtnFondoBarismo_24: 1147773844
+      BtnFondoBarismo_25: -1039280455
+      BtnFondoBarismo_26: 1538925339
+      BtnFondoBarismo_27: -150613982
+      BtnFondoBarismo_28: -1604712306
+      BtnFondoBarismo_29: 1314453258
+      BtnFondoBarismo_3: 835741565
+      BtnFondoBarismo_30: 1060613193
+      BtnFondoBarismo_31: -2044791947
+      BtnFondoBarismo_32: 1567518149
+      BtnFondoBarismo_33: 1819123012
+      BtnFondoBarismo_34: -1074501159
+      BtnFondoBarismo_35: -437421883
+      BtnFondoBarismo_36: 1026904319
+      BtnFondoBarismo_37: 1377713291
+      BtnFondoBarismo_38: -1552148641
+      BtnFondoBarismo_39: -2022482413
+      BtnFondoBarismo_4: 527396061
+      BtnFondoBarismo_40: -1232889361
+      BtnFondoBarismo_41: 1793583646
+      BtnFondoBarismo_42: 1852920039
+      BtnFondoBarismo_43: -780944876
+      BtnFondoBarismo_44: 806227924
+      BtnFondoBarismo_45: -1728516539
+      BtnFondoBarismo_46: 2076272071
+      BtnFondoBarismo_47: -1796773834
+      BtnFondoBarismo_48: -370384876
+      BtnFondoBarismo_49: 2101595556
+      BtnFondoBarismo_5: 1561379775
+      BtnFondoBarismo_50: 1981374532
+      BtnFondoBarismo_51: 1992769242
+      BtnFondoBarismo_52: 1878723170
+      BtnFondoBarismo_53: 1915295780
+      BtnFondoBarismo_54: 1523277522
+      BtnFondoBarismo_55: -553170655
+      BtnFondoBarismo_56: -1026234636
+      BtnFondoBarismo_57: -543241819
+      BtnFondoBarismo_58: -598736110
+      BtnFondoBarismo_59: -1941585060
+      BtnFondoBarismo_6: 1427673513
+      BtnFondoBarismo_60: 2078530450
+      BtnFondoBarismo_61: -561078575
+      BtnFondoBarismo_62: -2040441051
+      BtnFondoBarismo_63: 1603710190
+      BtnFondoBarismo_64: 5629854
+      BtnFondoBarismo_65: -1136371033
+      BtnFondoBarismo_66: 1443858939
+      BtnFondoBarismo_67: 1282445171
+      BtnFondoBarismo_68: -104705999
+      BtnFondoBarismo_69: -1278663587
+      BtnFondoBarismo_7: -236237321
+      BtnFondoBarismo_70: -45410060
+      BtnFondoBarismo_71: 600577002
+      BtnFondoBarismo_72: 1107469836
+      BtnFondoBarismo_73: 1715918898
+      BtnFondoBarismo_74: 892491310
+      BtnFondoBarismo_75: 168092395
+      BtnFondoBarismo_76: 1876605811
+      BtnFondoBarismo_77: 2007402599
+      BtnFondoBarismo_78: 765513056
+      BtnFondoBarismo_79: -1776460504
+      BtnFondoBarismo_8: 1175338708
+      BtnFondoBarismo_80: -996969279
+      BtnFondoBarismo_81: 673509855
+      BtnFondoBarismo_82: -1678122920
+      BtnFondoBarismo_83: -1881509392
+      BtnFondoBarismo_84: -931274050
+      BtnFondoBarismo_85: 1429851806
+      BtnFondoBarismo_86: -663739943
+      BtnFondoBarismo_87: 1266385148
+      BtnFondoBarismo_88: 243300982
+      BtnFondoBarismo_89: -60472652
+      BtnFondoBarismo_9: -1191785260
+      BtnFondoBarismo_90: 1667616462
+      BtnFondoBarismo_91: 2069570923
+      BtnFondoBarismo_92: -2092509908
+      BtnFondoBarismo_93: -105965502
+      BtnFondoBarismo_94: -2040851612
+      BtnFondoBarismo_95: -1055335937
+      BtnFondoBarismo_96: -1432055037
+      BtnFondoBarismo_97: 1238532863
+      BtnFondoBarismo_98: 457849367
+      BtnFondoBarismo_99: 251801604
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

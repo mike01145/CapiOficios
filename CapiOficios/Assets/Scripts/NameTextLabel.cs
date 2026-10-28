@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -16,6 +17,20 @@ public class NameTextLabel : MonoBehaviour
 
     private void OnEnable()
     {
-        _label.text = _phaseBeforeName + PlayerProfile.Name + _phaseAfterName;
+        PlayerProfile.OnNameConfirmed += NameTextLable_OnNameConfirmed;
+        NameTextLable_OnNameConfirmed(null, new PlayerProfile.NameConfirmedEventArgs { Name = PlayerProfile.Name });
+    }
+    private void OnDisable()
+    {
+        PlayerProfile.OnNameConfirmed -= NameTextLable_OnNameConfirmed;
+    }
+    private void NameTextLable_OnNameConfirmed(object sender, PlayerProfile.NameConfirmedEventArgs e)
+    {
+        _label.text = _phaseBeforeName + e.Name + _phaseAfterName;
+    }
+    public void ShowName(string name)
+    {
+        if (_label == null) _label = GetComponent<TextMeshProUGUI>();
+        _label.text = _phaseBeforeName + name + _phaseAfterName;
     }
 }

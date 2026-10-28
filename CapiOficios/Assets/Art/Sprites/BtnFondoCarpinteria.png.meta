@@ -1,0 +1,2800 @@
+fileFormatVersion: 2
+guid: b09b1378f9b28e240b2893ed1a4a9527
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_0
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 70
+        width: 594
+        height: 696
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 628ddbf3025649944bba3c36ddd35782
+      internalID: 645989383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 783
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9b3311fbe0e8f5448af261ce07cc82d
+      internalID: -816226514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_2
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 786
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4d26b2e7e1d69a498851973d4b6e30b
+      internalID: -305234306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_3
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 786
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b1e83439e6d03848bde0e59c9a15b5d
+      internalID: -1177734010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_4
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 787
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6754d0557158dc947addef25fab6d927
+      internalID: 1644996325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_5
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 786
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 453d34e71119c764fa852eca8d4d9044
+      internalID: 188755646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_6
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 783
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad5f363bd616ce0499d20be915a0aae5
+      internalID: -2076159693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_7
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 788
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0176ebdb55d03df4cbecec1c3d7934ac
+      internalID: 687541642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_8
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 787
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e27c4ba114e16943b0048573f62015f
+      internalID: 38544973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_9
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 784
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f54d46a07562a9479e3e73c40f2c303
+      internalID: 816868851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_10
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 782
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f878c28fe19be14e8b6908384fe3283
+      internalID: -2083480321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_11
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 787
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbea0f402739084499b2574d8fa3bfe7
+      internalID: 195804683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_12
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 787
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 346d629eef78bed428579a90e7f78eda
+      internalID: -715874203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_13
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 786
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fcb45b5c1f884a4781795e13c1d2575
+      internalID: -1407461663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_14
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 787
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c48dff2a8ea4aae40aff0c6fb80aacc1
+      internalID: 1074662079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_15
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 784
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71f3bbac804e5a146bec042e0bf4d747
+      internalID: -95545203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_16
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 785
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f967c851aa49354182080fc1b831761
+      internalID: 256575665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_17
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 786
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d41aab461be7ea747b11d61040fe33d5
+      internalID: -843655033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_18
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 785
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6a6d332b30f4d147aa88534fe7f77f9
+      internalID: 2131389689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_19
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 786
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06dda0c859c47944e8318d332ff991fd
+      internalID: -704202879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_20
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 783
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0af9353d4480f5d4bb6f10a76af54304
+      internalID: -1913459515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_21
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 788
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df944efe83658ec4f8ed204918fdcc6d
+      internalID: 917316347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_22
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 787
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d846f765d17224419b35fb9069fd2ef
+      internalID: 329401871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_23
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 784
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 768a3d00b01c24244a39d21dbf326248
+      internalID: 198338751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_24
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 782
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7b92542d1a80074fa0de683ed4ee77f
+      internalID: -301334847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_25
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 787
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dd758fc188806e48ac37aacdc82934a
+      internalID: 1487105084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_26
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 787
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed3b6133be7dcfc47a4b910d9ca06a0c
+      internalID: -233993249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_27
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 786
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71b3ea5702171f749857004b664fcfdf
+      internalID: 635059240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_28
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 787
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fdda2016849ac640aff83959f4d4fac
+      internalID: 552369461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_29
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 784
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a96f54fa502fd714a9c6d0ba11ef70f8
+      internalID: -2057578836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_30
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 785
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92972e1cefd31584aa273adfb7c69e4c
+      internalID: -662728838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_31
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 786
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42251ffdad7c3af4582c6a8b2953d8df
+      internalID: 1533159813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_32
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 787
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d373c5edcd1a658498d4f3369b08aec1
+      internalID: 1073174609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_33
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 785
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de15a5ec94c28f941b20b46e3508ca7d
+      internalID: -734265746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_34
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 786
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9d57a65d2653e74f8f3137c0f951b11
+      internalID: 1816432703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_35
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 784
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 103aa5e64f0cd3b4d8ba328f888bd800
+      internalID: -1130127744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_36
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 782
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68afd28994d74a546ad41e57cd593e8a
+      internalID: -599880315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_37
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 747
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19a880f689e4ffe40bcad77093e70641
+      internalID: 1599725380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_38
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 734
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f10b1d65311d1243ac7867d87a01fef
+      internalID: -2138656969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_39
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 735
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0fc8ed67a50a164eb99332c75c7c7da
+      internalID: 10768004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 721
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7a273fc99fbd0b40a12d50397085c02
+      internalID: 1463604046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_41
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 729
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f7ae9e9223051a4cba100b85d3b7d48
+      internalID: -800948170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_42
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 722
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f8d674fab749194b945d77f04f9a188
+      internalID: 1174317667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_43
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 716
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: babebbf6cbb4ab5449205905c932263e
+      internalID: 112923163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_44
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 710
+        width: 10
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 544af9d8ecb37fb4cadd0d840a8f0ff9
+      internalID: -601952317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 691
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faee8f77f4639854da4c89162be0a69b
+      internalID: -2036605585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_46
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 697
+        width: 10
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33f77a7b43188f843ba69b9095f471a6
+      internalID: 1722075709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_47
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 626
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a83339be4511e454daef621d43251f0b
+      internalID: 1513392611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 597
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77167094ba9da1b478f3031adf0757e2
+      internalID: 1969645190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_49
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 604
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6851b432d331714f8c8d6072a3b01d9
+      internalID: 1502409885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_50
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 596
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0208072816e0b0449db60e77507cc50
+      internalID: 841267447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_51
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 582
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f00d69654b4acd4081caf88d456f9a1
+      internalID: 735455151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_52
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 586
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab9069fbd5e3f3e49aa2914f99c6cfe4
+      internalID: 2079606619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_53
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 576
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2cd5f8c90e411243ba465fa097f9714
+      internalID: 1953660656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 563
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 316067efce7e885418ca40e3ce2521df
+      internalID: 1261185706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_55
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 550
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbabf8b42d89b9a4284ec4fdc0784164
+      internalID: 83267887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_56
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 541
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7aa6cc0dbf9e9d4ebf1dfa4700c23f9
+      internalID: 555212709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_57
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 511
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aea834595530f7247a375441e6b38252
+      internalID: -343725294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_58
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 500
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88749a9f54ea0ec478ccd1003c0f70fc
+      internalID: 1957364405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_59
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 491
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f54b873b34611b64fb830a4c52a31b70
+      internalID: 711802630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 478
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19221fa42dab8534a804845837c06516
+      internalID: -427209018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_61
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 474
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47f84b40006bbc04ab83ab9f156f38f0
+      internalID: 1530591751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_62
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 471
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90c10a5a942547d4c83e2137c9b1fbfc
+      internalID: 811656860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_63
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 460
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5da577a6cc9476b42bcc4d49416b2036
+      internalID: -99494693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_64
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 454
+        width: 10
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72d5d2278fc2e8049839c3fdd687c249
+      internalID: 1177652411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_65
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 435
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3f477c600ca8a44c9143427a9a4eff5
+      internalID: 1469458842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_66
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 370
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19becb92a8429ce43b613e51a0e9e4f7
+      internalID: 482709874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_67
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 341
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd324f5ca1911a4479d10e2004ca12e6
+      internalID: 981712798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_68
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 348
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e17fb5d3bee34174ebca0efb5c91e591
+      internalID: 2106997262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_69
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 340
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ea3d87096553104c904a5c4acfadc41
+      internalID: -112964108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_70
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 326
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e03f97f9e913ec46a0f104bef44901d
+      internalID: 1240163559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_71
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 330
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09495e3589714c04bbe2eda3d732ab8d
+      internalID: -913202038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0d035eef5202c84ebd6797f078be0cd
+      internalID: -987853067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_73
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 307
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 581e9e41e18e1f1428533ff6d7db9ee5
+      internalID: -1681094048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_74
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 294
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c1035cf06c29764d983e5b8c1b33c67
+      internalID: 2004223064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_75
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 285
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e20738f66abf5894387876fef76c8c2a
+      internalID: -721320216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_76
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 255
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9a08f7728271564093bd939d5b31d43
+      internalID: 495019657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_77
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 244
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 817415a7bc7d99a4abe734716dddaabe
+      internalID: 1457504223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_78
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 235
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ad1fcd0f9c3cb7408b67de0befb2d2c
+      internalID: -106915727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_79
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 222
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7276f01c0e2fd649a559ae997578bd6
+      internalID: -642968138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_80
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 218
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b26d6073d2109f54983177019ff4afed
+      internalID: 985035150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_81
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 215
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58004d605e8e77d45873b19fc89adadf
+      internalID: 1604602513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_82
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 204
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c382a877df8a0f479beac1005d567d5
+      internalID: 268717029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_83
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 198
+        width: 10
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94680620ffd47f2438e37284c75ddcf1
+      internalID: -2121526991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_84
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 179
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83c783f767634ef40b77b9254dd5d424
+      internalID: -717811206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_85
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 114
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3571de99edf81fc4583983805cfc0471
+      internalID: -783822123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_86
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 85
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c807a3f0df5c8f43a42a95fe561d797
+      internalID: 144037240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_87
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 92
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ff998d5ddd783542a477683974f1715
+      internalID: -924542530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_88
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 72
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d5291a3bc979ec4cb6ffb0484b1bb13
+      internalID: -224126556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_89
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 74
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6f7133a153de5645a8e804aeb2247ce
+      internalID: -1492590156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_90
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 63
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3840b9d626f5a6448b43b3c203ae42a6
+      internalID: -1878148139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_91
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd86899ddd7ad9149816da039e4853ba
+      internalID: -1394984226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_92
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 0
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53a12560d8227144a938c7fa4b30b74e
+      internalID: 1803743146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_93
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 0
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da542df85ac617743b0fd1f38ad72e52
+      internalID: -1440292565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_94
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 2
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57d71279ee2130642ad098762208fdbf
+      internalID: 368209631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_95
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 0
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfb051c9df48f6048bd89e3077758f0c
+      internalID: 75584139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_96
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 0
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02fd7f2b35fe90543b4725d6eafd5e7c
+      internalID: -150581830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_97
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 0
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4031507b2750a04e900df5fd066a612
+      internalID: -304906989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_98
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 0
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca57330ded90b464fa093cd01c4f5011
+      internalID: 1275573264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_99
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 0
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a569b5ec4919b240883297f146798b8
+      internalID: -304949246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_100
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c53b8b7d728becd4cb06e24a4a72a324
+      internalID: -855205709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_101
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 0
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0474cd04e51f6e9438918db5952b6908
+      internalID: 900890008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_102
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 0
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d80b16287fbb46a42a4109cd18d1000b
+      internalID: 909095061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_103
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c13716469ec8f5b468391f26f7d599d4
+      internalID: -41516316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_104
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 0
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 610456f31ef62534893e9e6ee529e76f
+      internalID: -1222326991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_105
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 2
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8aba0409e6e8ff43bd48e38a4d8ac82
+      internalID: -1814347213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_106
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 0
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc60249ddd7fc9149923bfad82deadae
+      internalID: -179621460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_107
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 0
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e1b297cd5b4afd478eb22f60f719a35
+      internalID: 1051810913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_108
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 0
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cf484b4caecb624097b33ab26837fe0
+      internalID: 1660315835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_109
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 0
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2201b9ba9b6a4fb4d97cb5b16b47c299
+      internalID: -1586361788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_110
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 0
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7974cba49e32ade4480fae91c5a6b30a
+      internalID: 732502426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_111
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b690c21fd2c31241a63f3a8f43ee75d
+      internalID: -845394428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_112
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 0
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e86348977d4047d42b9c057297e5d9fd
+      internalID: 208575530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_113
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 0
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2a952e25695078429a8dc916a9e0c3f
+      internalID: -1769889552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_114
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 0
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a056faa7ee297747acc96230c08f310
+      internalID: -2120485940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BtnFondoCarpinteria_115
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 0
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ca5ce5d2c561094d8ba29abdfb53f4a
+      internalID: 2144503051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 3f9b0d10f74d79e4a9ae8936c7eab9c4
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      BtnFondoCarpinteria_0: 645989383
+      BtnFondoCarpinteria_1: -816226514
+      BtnFondoCarpinteria_10: -2083480321
+      BtnFondoCarpinteria_100: -855205709
+      BtnFondoCarpinteria_101: 900890008
+      BtnFondoCarpinteria_102: 909095061
+      BtnFondoCarpinteria_103: -41516316
+      BtnFondoCarpinteria_104: -1222326991
+      BtnFondoCarpinteria_105: -1814347213
+      BtnFondoCarpinteria_106: -179621460
+      BtnFondoCarpinteria_107: 1051810913
+      BtnFondoCarpinteria_108: 1660315835
+      BtnFondoCarpinteria_109: -1586361788
+      BtnFondoCarpinteria_11: 195804683
+      BtnFondoCarpinteria_110: 732502426
+      BtnFondoCarpinteria_111: -845394428
+      BtnFondoCarpinteria_112: 208575530
+      BtnFondoCarpinteria_113: -1769889552
+      BtnFondoCarpinteria_114: -2120485940
+      BtnFondoCarpinteria_115: 2144503051
+      BtnFondoCarpinteria_12: -715874203
+      BtnFondoCarpinteria_13: -1407461663
+      BtnFondoCarpinteria_14: 1074662079
+      BtnFondoCarpinteria_15: -95545203
+      BtnFondoCarpinteria_16: 256575665
+      BtnFondoCarpinteria_17: -843655033
+      BtnFondoCarpinteria_18: 2131389689
+      BtnFondoCarpinteria_19: -704202879
+      BtnFondoCarpinteria_2: -305234306
+      BtnFondoCarpinteria_20: -1913459515
+      BtnFondoCarpinteria_21: 917316347
+      BtnFondoCarpinteria_22: 329401871
+      BtnFondoCarpinteria_23: 198338751
+      BtnFondoCarpinteria_24: -301334847
+      BtnFondoCarpinteria_25: 1487105084
+      BtnFondoCarpinteria_26: -233993249
+      BtnFondoCarpinteria_27: 635059240
+      BtnFondoCarpinteria_28: 552369461
+      BtnFondoCarpinteria_29: -2057578836
+      BtnFondoCarpinteria_3: -1177734010
+      BtnFondoCarpinteria_30: -662728838
+      BtnFondoCarpinteria_31: 1533159813
+      BtnFondoCarpinteria_32: 1073174609
+      BtnFondoCarpinteria_33: -734265746
+      BtnFondoCarpinteria_34: 1816432703
+      BtnFondoCarpinteria_35: -1130127744
+      BtnFondoCarpinteria_36: -599880315
+      BtnFondoCarpinteria_37: 1599725380
+      BtnFondoCarpinteria_38: -2138656969
+      BtnFondoCarpinteria_39: 10768004
+      BtnFondoCarpinteria_4: 1644996325
+      BtnFondoCarpinteria_40: 1463604046
+      BtnFondoCarpinteria_41: -800948170
+      BtnFondoCarpinteria_42: 1174317667
+      BtnFondoCarpinteria_43: 112923163
+      BtnFondoCarpinteria_44: -601952317
+      BtnFondoCarpinteria_45: -2036605585
+      BtnFondoCarpinteria_46: 1722075709
+      BtnFondoCarpinteria_47: 1513392611
+      BtnFondoCarpinteria_48: 1969645190
+      BtnFondoCarpinteria_49: 1502409885
+      BtnFondoCarpinteria_5: 188755646
+      BtnFondoCarpinteria_50: 841267447
+      BtnFondoCarpinteria_51: 735455151
+      BtnFondoCarpinteria_52: 2079606619
+      BtnFondoCarpinteria_53: 1953660656
+      BtnFondoCarpinteria_54: 1261185706
+      BtnFondoCarpinteria_55: 83267887
+      BtnFondoCarpinteria_56: 555212709
+      BtnFondoCarpinteria_57: -343725294
+      BtnFondoCarpinteria_58: 1957364405
+      BtnFondoCarpinteria_59: 711802630
+      BtnFondoCarpinteria_6: -2076159693
+      BtnFondoCarpinteria_60: -427209018
+      BtnFondoCarpinteria_61: 1530591751
+      BtnFondoCarpinteria_62: 811656860
+      BtnFondoCarpinteria_63: -99494693
+      BtnFondoCarpinteria_64: 1177652411
+      BtnFondoCarpinteria_65: 1469458842
+      BtnFondoCarpinteria_66: 482709874
+      BtnFondoCarpinteria_67: 981712798
+      BtnFondoCarpinteria_68: 2106997262
+      BtnFondoCarpinteria_69: -112964108
+      BtnFondoCarpinteria_7: 687541642
+      BtnFondoCarpinteria_70: 1240163559
+      BtnFondoCarpinteria_71: -913202038
+      BtnFondoCarpinteria_72: -987853067
+      BtnFondoCarpinteria_73: -1681094048
+      BtnFondoCarpinteria_74: 2004223064
+      BtnFondoCarpinteria_75: -721320216
+      BtnFondoCarpinteria_76: 495019657
+      BtnFondoCarpinteria_77: 1457504223
+      BtnFondoCarpinteria_78: -106915727
+      BtnFondoCarpinteria_79: -642968138
+      BtnFondoCarpinteria_8: 38544973
+      BtnFondoCarpinteria_80: 985035150
+      BtnFondoCarpinteria_81: 1604602513
+      BtnFondoCarpinteria_82: 268717029
+      BtnFondoCarpinteria_83: -2121526991
+      BtnFondoCarpinteria_84: -717811206
+      BtnFondoCarpinteria_85: -783822123
+      BtnFondoCarpinteria_86: 144037240
+      BtnFondoCarpinteria_87: -924542530
+      BtnFondoCarpinteria_88: -224126556
+      BtnFondoCarpinteria_89: -1492590156
+      BtnFondoCarpinteria_9: 816868851
+      BtnFondoCarpinteria_90: -1878148139
+      BtnFondoCarpinteria_91: -1394984226
+      BtnFondoCarpinteria_92: 1803743146
+      BtnFondoCarpinteria_93: -1440292565
+      BtnFondoCarpinteria_94: 368209631
+      BtnFondoCarpinteria_95: 75584139
+      BtnFondoCarpinteria_96: -150581830
+      BtnFondoCarpinteria_97: -304906989
+      BtnFondoCarpinteria_98: 1275573264
+      BtnFondoCarpinteria_99: -304949246
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
