@@ -35718,7 +35718,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Highlightable
   _mode: 1
   _outlineMaterial: {fileID: 0}
-  _tintColor: {r: 1, g: 0.85, b: 0.4, a: 1}
+  _tintColor: {r: 0.39999998, g: 1, b: 0.49739978, a: 1}
   _colorProperty: _BaseColor
   _guideColor: {r: 1, g: 0.8, b: 0.2, a: 1}
   _onClick:
@@ -88865,38 +88865,16 @@ GameObject:
   - component: {fileID: 1472388613}
   - component: {fileID: 1472388612}
   - component: {fileID: 1472388611}
-  - component: {fileID: 1472388610}
   - component: {fileID: 1472388615}
   - component: {fileID: 1472388614}
-  m_Layer: 3
+  - component: {fileID: 1472388616}
+  m_Layer: 6
   m_Name: CupWaterHot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1472388610
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1472388609}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5320792793371287942, guid: 632deaa03cbb05843beb7df930bb1ff7, type: 3}
 --- !u!23 &1472388611
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -89011,6 +88989,27 @@ MonoBehaviour:
   _onHoverExit:
     m_PersistentCalls:
       m_Calls: []
+--- !u!65 &1472388616
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472388609}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.3682053, y: 0.34978423, z: 0.32209677}
+  m_Center: {x: -0.011275267, y: 0.17476471, z: 0.07300395}
 --- !u!1 &1473990749
 GameObject:
   m_ObjectHideFlags: 0
@@ -106770,13 +106769,13 @@ MonoBehaviour:
       completion: 2
       gameStep: 0
       feedback: 2
-      feedbackSource: {fileID: 0}
+      feedbackSource: {fileID: 2042300341}
       reveal:
       - {fileID: 505137413}
       - {fileID: 2042300340}
       - {fileID: 266524486}
       targets:
-      - {fileID: 0}
+      - {fileID: 2042300344}
       alsoAllowed: []
       uiTarget: {fileID: 0}
     - text: Cargala tocando la caja.
@@ -123890,15 +123889,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2042300340}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2bd6d2dd9eb9014eb2fff001209088e, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a1b440352924c24fbcad9c4f576214e, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Cup
+  m_EditorClassIdentifier: Assembly-CSharp::MilkJug
   _type: 4
   _destroyOnReturn: 0
-  _espressoVisual: {fileID: 0}
-  _waterVisual: {fileID: 0}
   _milkVisual: {fileID: 0}
-  _foamVisual: {fileID: 0}
 --- !u!1001 &2042342281
 PrefabInstance:
   m_ObjectHideFlags: 0
