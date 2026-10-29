@@ -44,6 +44,7 @@ public class Carryable : MonoBehaviour, IClickable
 
     public virtual void OnClicked()
     {
+        Debug.Log($"OnClicked {name} | tipo {GetType().Name} | Held: {PlayerHand.Instance.GetHeld} | Busy: {GetBusy}");
         var hand = PlayerHand.Instance;
         if (GetBusy) { hand.Say("Está en uso, esperá a que termine."); return; }
         if (hand.GetHeld == null) hand.Pick(this);

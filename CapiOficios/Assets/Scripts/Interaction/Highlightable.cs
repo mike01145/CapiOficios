@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -16,14 +17,17 @@ public class Highlightable : MonoBehaviour
     [SerializeField] private Color _tintColor = new(1f, 0.85f, 0.4f);
     [Tooltip("Nombre de la propiedad de color del shader. En URP/Lit es _BaseColor.")]
     [SerializeField] private string _colorProperty = "_BaseColor";
+    [SerializeField] private Color _guideColor = new(1f, .8f, .2f);
 
     [Header("Eventos")]
     [SerializeField] private UnityEvent _onClick;
     [SerializeField] private UnityEvent _onHoverEnter;
     [SerializeField] private UnityEvent _onHoverExit;
 
+    public static Func<Highlightable, bool> ClickFilter;
     private Renderer[] _renderers;
     private MaterialPropertyBlock _block;
+    private bool _guided;
     private bool _hovered;
     private bool _selected;
     private bool _applied;
@@ -34,7 +38,20 @@ public class Highlightable : MonoBehaviour
         _renderers = GetComponentsInChildren<Renderer>();
         _block = new MaterialPropertyBlock();
     }
-
+    private void Update()
+    {
+        if (!_guided || _mode != Mode.Tint) return;
+        float t = Mathf.PingPong(Time.unscaledTime * 2f, 1f) * 0.7f;
+        foreach (var r in _renderers)
+        {
+            Material m = r.sharedMaterial;
+            if (!HasColorProperty(m, _colorProperty)) continue;
+            Color o = m.GetColor(_colorProperty);
+            r.GetPropertyBlock(_block);
+            _block.SetColor(_colorProperty, Color.Lerp(o, _guideColor, t));
+            r.SetPropertyBlock(_block);
+        }
+    }
     public void SetHovered(bool value)
     {
         if (_hovered == value) return;
@@ -43,7 +60,12 @@ public class Highlightable : MonoBehaviour
         (value ? _onHoverEnter : _onHoverExit)?.Invoke();
         Refresh();
     }
-
+    public void SetGuide(bool value)
+    {
+        if (_guided == value) return;
+        _guided = value;
+        Refresh();
+    }
     public void SetSelected(bool value)
     {
         if (_hovered == value) return;
@@ -52,6 +74,8 @@ public class Highlightable : MonoBehaviour
 
     public void Click()
     {
+        Debug.Log($"Click en {name} | filtro: {(ClickFilter == null ? "sin filtro" : ClickFilter(this).ToString())}");
+        if (ClickFilter != null && !ClickFilter(this)) return;
         GameEvents.Raise(Feedback.Click, transform);
         foreach (var c in GetComponents<IClickable>()) c.OnClicked();
         _onClick?.Invoke();
@@ -59,7 +83,7 @@ public class Highlightable : MonoBehaviour
 
     private void Refresh()
     {
-        bool shouldBeOn = _hovered || _selected;
+        bool shouldBeOn = _hovered || _selected || _guided;
         if (shouldBeOn == _applied) return;
         _applied = shouldBeOn;
 
