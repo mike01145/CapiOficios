@@ -30,13 +30,24 @@ public readonly struct ProgressInfo
     public readonly string Text;
     public readonly Color Color;
 
-    public ProgressInfo(Transform source, string title, float value, string text, Color color)
+    public readonly float ZoneMin;   // 0 a 1, -1 = sin zona
+    public readonly float ZoneMax;
+    public ProgressInfo(Transform source,
+     string title,
+     float value,
+     string text,
+     Color color,
+     float zoneMin = -1f,
+     float zoneMax = -1f
+     )
     {
         Source = source;
         Title = title;
         Value = value;
         Text = text;
         Color = color;
+        ZoneMin = zoneMin;
+        ZoneMax = zoneMax;
     }
 }
 
@@ -105,8 +116,8 @@ public static class GameEvents
     public static void CompleteStep(GameStep step) => OnStepCompleted?.Invoke(null, new StepCompletedEventArgs(step));
     public static void ClearProgress(Transform source) => OnProgressCleared?.Invoke(null, new ProgressClearedEventArgs(source));
 
-    public static void ShowProgress(Transform source, string title, float value, string text, Color? color = null)
-        => OnProgressChanged?.Invoke(null, new ProgressEventArgs(new ProgressInfo(source, title, value, text, color ?? DefaultProgressColor)));
+    public static void ShowProgress(Transform source, string title, float value, string text, Color? color = null, float zoneMin = -1f, float zoneMax = -1f)
+        => OnProgressChanged?.Invoke(null, new ProgressEventArgs(new ProgressInfo(source, title, value, text, color ?? DefaultProgressColor, zoneMax, zoneMin)));
 
     // Por si desactivás "Domain Reload" en Enter Play Mode: limpia suscriptores viejos
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -14,7 +15,8 @@ public class TutorialStep
     [TextArea(1, 3)] public string helpText;
     [Tooltip("Si está tildado, este paso se saltea en modo Assisted.")]
     public bool onlyGuided;
-
+    [Tooltip("Texto en la lista desplegable. Vacío = este paso no aparece en la lista.")]
+    public string listLabel;
     public StepCompletion completion;
     public GameStep gameStep;          // si completion = GameStep
     public Feedback feedback;          // si completion = Feedback (ej. Pickup, Place)
@@ -75,7 +77,17 @@ public class TutorialManager : MonoBehaviour
 
     [Header("Eventos")]
     [SerializeField] private UnityEvent _onFinished;
+    public TutorialSequence GetCurrentSequence => _running ? _sequences[_seqIndex] : null;
+    public int GetCurrentStepIndex => _stepIndex;
+    public bool GetIsAssisted => _mode == Mode.Assisted;
 
+    public event EventHandler<SequenceStartedArgs> OnSequenceStarted;
+    public event EventHandler<SequenceStartedArgs> OnStepChanged;
+    public class SequenceStartedArgs : EventArgs
+    {
+        public TutorialSequence sequence;
+        public int stepIndex;
+    }
     private int _seqIndex;
     private int _stepIndex = -1;
     private bool _running;
@@ -134,7 +146,7 @@ public class TutorialManager : MonoBehaviour
         }
         else
         {
-            BeginSequence(_assistedSequence < 0 ? Random.Range(0, _sequences.Length) : _assistedSequence);
+            BeginSequence(_assistedSequence < 0 ? UnityEngine.Random.Range(0, _sequences.Length) : _assistedSequence);
         }
     }
 
@@ -203,6 +215,7 @@ public class TutorialManager : MonoBehaviour
             foreach (var st in seq.steps)
                 foreach (var go in st.reveal) if (go != null) go.SetActive(true);
 
+        OnSequenceStarted?.Invoke(this, new SequenceStartedArgs { sequence = _sequences[index], stepIndex = 0 });
         GoToStep(0);
     }
 
@@ -220,6 +233,7 @@ public class TutorialManager : MonoBehaviour
         if (index >= steps.Length) { EndSequence(); return; }
 
         _stepIndex = index;
+        OnStepChanged?.Invoke(this, new SequenceStartedArgs { sequence = _sequences[_seqIndex], stepIndex = index });
         if (_mode != Mode.Guided) return;
 
         var s = steps[index];

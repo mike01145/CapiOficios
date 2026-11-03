@@ -7,6 +7,8 @@ public class SteamWand : ItemSlot
     [SerializeField] private float _maxGood = 90f;
     [SerializeField] private float _maxTemp = 100f;
     [SerializeField] private ParticleSystem _steamFx;   // opcional
+    [SerializeField] private float _greenHoldTime = 3f;
+    [SerializeField] private float _overheatDuration = 5f;
 
     private bool _foamMode;
     private bool _heating;
@@ -26,7 +28,6 @@ public class SteamWand : ItemSlot
         if (jug.GetMilk == MilkQuality.Good) { why = "La leche ya está caliente."; return false; }
         return true;
     }
-
     protected override void OnUsedEmptyHanded()
     {
         var jug = GetPlaced as MilkJug;
@@ -35,31 +36,69 @@ public class SteamWand : ItemSlot
         if (_heating) StopHeating(jug);
         else _routine = StartCoroutine(Heat(jug));
     }
-
     private IEnumerator Heat(MilkJug jug)
     {
         _heating = true;
         jug.GetBusy = true;
         GameEvents.Raise(Feedback.SteamStart, transform);
         if (_steamFx != null) _steamFx.Play();
-
         _currentTemp = jug.GetTemperature;
-        while (_currentTemp < _maxTemp)
+        // ETAPA 1: Calentamiento normal hasta 60°
+        while (_currentTemp < _minGood)
         {
-            _currentTemp = Mathf.Min(_maxTemp, _currentTemp + _heatPerSecond * Time.deltaTime);
+            _currentTemp += _heatPerSecond * Time.deltaTime;
+            _currentTemp = Mathf.Min(_currentTemp, _minGood);
+
             ShowTemperature();
             yield return null;
         }
 
+        // ETAPA 2: Zona verde, aumenta más rápido hasta 90°
+        float greenSpeed = _heatPerSecond * 1.5f;
+
+        while (_currentTemp < _maxGood)
+        {
+            _currentTemp += greenSpeed * Time.deltaTime;
+            _currentTemp = Mathf.Min(_currentTemp, _maxGood);
+
+            ShowTemperature();
+            yield return null;
+        }
+
+        // ETAPA 3: Fill completamente verde durante 5 segundos
+        _currentTemp = _maxGood;
+        ShowTemperature();
+
+        yield return new WaitForSeconds(_greenHoldTime);
+
+        // ETAPA 4: Sobrecalentamiento hasta quemarse
+        float elapsed = 0f;
+        float overheatDuration = _overheatDuration;
+
+        while (elapsed < overheatDuration)
+        {
+            elapsed += Time.deltaTime;
+
+            _currentTemp = Mathf.Lerp(
+                _maxGood,
+                _maxTemp,
+                elapsed / overheatDuration
+            );
+
+            ShowTemperature();
+            yield return null;
+        }
+
+        _currentTemp = _maxTemp;
+        ShowTemperature();
+
         Finish(jug); // llegó al máximo: se quemó
     }
-
     private void StopHeating(MilkJug jug)
     {
         if (_routine != null) StopCoroutine(_routine);
         Finish(jug);
     }
-
     private void Finish(MilkJug jug)
     {
         _heating = false;
@@ -81,14 +120,14 @@ public class SteamWand : ItemSlot
         }
         else hand.Say("¡Se quemó la leche (" + t + ")! Descartala en el tacho.");
     }
-
     private void ShowTemperature()
     {
         Color c;
         if (_currentTemp < _minGood) c = new Color(0.35f, 0.6f, 1f); // fría
         else if (_currentTemp <= _maxGood) c = new Color(0.3f, 0.75f, 0.35f); // en su punto
         else c = new Color(0.9f, 0.25f, 0.25f); // demasiado caliente
+        float progress = Mathf.Clamp01(_currentTemp / _maxGood);
 
-        GameEvents.ShowProgress(transform, "Calentando leche", _currentTemp / _maxTemp, Mathf.RoundToInt(_currentTemp) + "°C", c);
+        GameEvents.ShowProgress(transform, "Calentando leche", progress, Mathf.RoundToInt(_currentTemp) + "°C", c, _minGood / _maxGood, _maxGood / _maxGood);
     }
 }

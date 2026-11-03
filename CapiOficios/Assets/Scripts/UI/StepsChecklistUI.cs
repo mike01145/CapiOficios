@@ -3,12 +3,11 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StepChecklistUI : MonoBehaviour
+public class StepsChecklistUI : MonoBehaviour
 {
     [SerializeField] private StepTracker _stepTracker;
     [Tooltip("Panel donde se crean las filas (conviene con una Image de fondo).")]
     [SerializeField] private RectTransform _listRoot;
-
     [Header("Estilo")]
     [SerializeField] private float _fontSize = 22f;
     [SerializeField] private float _boxSize = 26f;
