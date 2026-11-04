@@ -20,13 +20,18 @@ public class ModelViewer : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     [SerializeField, Range(0.5f, 2f)] private float _resolutionScale = 1f;
     private RawImage _display;
     private RenderTexture _rt;
+    private RectTransform _rectTransform;
     private Transform _active;
     private Quaternion[] _startRotations;
     private bool _initialized;
     private bool _dragging;
     private float _idleTimer;
     private int _currentIndex = -1;
-    private void Awake() => Init();
+    private void Awake()
+    {
+        _rectTransform = GetComponent<RectTransform>();
+        Init();
+    }
     private void Init()
     {
         if (_initialized) return;
@@ -139,5 +144,19 @@ public class ModelViewer : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         if (!_allowZoom) return;
         _viewCamera.fieldOfView = Mathf.Clamp(_viewCamera.fieldOfView - e.scrollDelta.y * 2f, _minFov, _maxFov);
     }
+    public void SetActiveModelPosition(Vector3 position)
+    {
+        if (_rectTransform == null)
+            _rectTransform = GetComponent<RectTransform>();
 
+        _rectTransform.anchoredPosition = position;
+    }
+    public void MoveModelToPosition1()
+    {
+        SetActiveModelPosition(new Vector3(537, -67.5f, 0));
+    }
+    public void MoveModelToPosition2()
+    {
+        SetActiveModelPosition(new Vector3(-150, 0, 0));
+    }
 }
