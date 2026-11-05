@@ -153,10 +153,10 @@ public class ModelViewer : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     }
     public void MoveModelToPosition1()
     {
-        SetActiveModelPosition(new Vector3(537, -67.5f, 0));
+        SetActiveModelPosition(new Vector3(-260, -75, 0));
     }
     public void MoveModelToPosition2()
     {
-        SetActiveModelPosition(new Vector3(-150, 0, 0));
+        SetActiveModelPosition(new Vector3(-700, 0, 0));
     }
 }

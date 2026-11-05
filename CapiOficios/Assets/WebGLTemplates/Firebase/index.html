@@ -95,8 +95,18 @@
   <body>
     <div id="unity-container">
       <canvas id="unity-canvas" tabindex="-1"></canvas>
+      <div
+        id="unity-warning"
+        style="
+          position: absolute;
+          top: 10px;
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: 20;
+          display: none;
+        "
+      ></div>
     </div>
-
     <div id="loader">
       <!-- Poné tu logo en TemplateData/logo.png -->
       <img src="TemplateData/logo.png" alt="CapiLab" />
@@ -131,12 +141,12 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/CapiOficios.loader.js";
+      var loaderUrl = buildUrl + "/{{{ LOADER_FILENAME }}}";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/CapiOficios.data.br",
-        frameworkUrl: buildUrl + "/CapiOficios.framework.js.br",
-        codeUrl: buildUrl + "/CapiOficios.wasm.br",
+        dataUrl: buildUrl + "/{{{ DATA_FILENAME }}}",
+        frameworkUrl: buildUrl + "/{{{ FRAMEWORK_FILENAME }}}",
+        codeUrl: buildUrl + "/{{{ CODE_FILENAME }}}",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "CapiOficios",
