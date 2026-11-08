@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Prepara el caf\xE9 \npara servir en taza"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: bf4ffa96b7c57ee41a17f6f3cd1cdfe1, type: 2}
-  m_sharedMaterial: {fileID: -1758881336897661637, guid: bf4ffa96b7c57ee41a17f6f3cd1cdfe1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5c19f9659f0eb434e8496dd2c60c0958, type: 2}
+  m_sharedMaterial: {fileID: 6511785040185306413, guid: 5c19f9659f0eb434e8496dd2c60c0958, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

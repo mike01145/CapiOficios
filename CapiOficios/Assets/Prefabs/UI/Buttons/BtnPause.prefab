@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 33990822, guid: d2c7cb1da5f39c040af126348a78f381, type: 3}
+  m_Sprite: {fileID: -1278686009, guid: d2c7cb1da5f39c040af126348a78f381, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -105,10 +105,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 720943716, guid: 3d80375cca558f044b83049345cdd26a, type: 3}
-    m_PressedSprite: {fileID: 119716196, guid: 0bd873d64b04a0a41a3fd97fe91cf0a0, type: 3}
-    m_SelectedSprite: {fileID: 720943716, guid: 3d80375cca558f044b83049345cdd26a, type: 3}
-    m_DisabledSprite: {fileID: 33990822, guid: d2c7cb1da5f39c040af126348a78f381, type: 3}
+    m_HighlightedSprite: {fileID: 412956994, guid: 3d80375cca558f044b83049345cdd26a, type: 3}
+    m_PressedSprite: {fileID: 1214494720, guid: 0bd873d64b04a0a41a3fd97fe91cf0a0, type: 3}
+    m_SelectedSprite: {fileID: 412956994, guid: 3d80375cca558f044b83049345cdd26a, type: 3}
+    m_DisabledSprite: {fileID: -1278686009, guid: d2c7cb1da5f39c040af126348a78f381, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
