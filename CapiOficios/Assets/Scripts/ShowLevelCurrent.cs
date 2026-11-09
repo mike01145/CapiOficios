@@ -14,7 +14,7 @@ public class ShowLevelCurrent : MonoBehaviour
         _currentLevel = ProgressManager.Instance.HighestUnlocked(Category.Barismo);
         ShowLevelCurrent_Refresh();
     }
-    void OnDisable()
+    void OnDestroy()
     {
         ProgressManager.Instance.OnProgressChanged -= ShowLevelCurrent_Refresh;
     }
