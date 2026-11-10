@@ -6,7 +6,7 @@ public class ShowLevelCurrent : MonoBehaviour
     [SerializeField] private GameObject gameObjectToShow_1;
     [SerializeField] private GameObject gameObjectToShow_2;
     [SerializeField] private GameObject gameObjectToShow_3;
-    int _currentLevel = 1;
+    int _currentLevel = 0;
     private void Start()
     {
         ProgressManager.Instance.OnProgressChanged += ShowLevelCurrent_Refresh;
