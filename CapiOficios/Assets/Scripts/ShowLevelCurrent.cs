@@ -21,8 +21,8 @@ public class ShowLevelCurrent : MonoBehaviour
 
     private void ShowLevelCurrent_Refresh()
     {
-        gameObjectToShow_1.SetActive(_currentLevel == 1);
-        gameObjectToShow_2.SetActive(_currentLevel == 2);
-        gameObjectToShow_3.SetActive(_currentLevel == 3);
+        gameObjectToShow_1.SetActive(_currentLevel == 0);
+        gameObjectToShow_2.SetActive(_currentLevel == 1);
+        gameObjectToShow_3.SetActive(_currentLevel == 2);
     }
 }

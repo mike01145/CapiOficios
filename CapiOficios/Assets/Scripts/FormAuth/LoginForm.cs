@@ -38,7 +38,7 @@ public class LoginForm : MonoBehaviour
 
         _onValid?.Invoke(email, pass);
     }
-    private void ClearFields()
+    public void ClearFields()
     {
         _email.text = "";
         _password.text = "";

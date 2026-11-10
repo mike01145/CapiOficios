@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class RegisterForm : MonoBehaviour
 {
-    [Header("Campos")]
+    [Header("Camp")]
     [SerializeField] private TMP_InputField _name;
     [SerializeField] private TMP_InputField _email;
     [SerializeField] private TMP_InputField _password;
@@ -16,7 +16,7 @@ public class RegisterForm : MonoBehaviour
     [SerializeField] private Button _submit;
     [SerializeField] private TextMeshProUGUI _errorText;
 
-    [Header("Reglas")]
+    [Header("Rules")]
     [SerializeField] private int _minPasswordLength = 6;
     [SerializeField] private UnityEvent<string, string, string> _onValid; // name, email, password
 
@@ -51,7 +51,7 @@ public class RegisterForm : MonoBehaviour
 
         _onValid?.Invoke(name, email, pass);
     }
-    private void ClearFields()
+    public void ClearFields()
     {
         _name.text = "";
         _email.text = "";
@@ -59,7 +59,7 @@ public class RegisterForm : MonoBehaviour
         _repeatPassword.text = "";
         if (_errorText != null) _errorText.text = "";
     }
-    private void ShowError(string msg)
+    public void ShowError(string msg)
     {
         if (_errorText != null) _errorText.text = msg;
     }

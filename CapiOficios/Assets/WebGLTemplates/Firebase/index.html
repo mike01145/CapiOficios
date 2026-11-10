@@ -161,6 +161,7 @@
             100 * progress + "%";
         })
           .then((unityInstance) => {
+            window.unityInstance = unityInstance;
             var l = document.getElementById("loader");
             l.classList.add("hide");
             setTimeout(() => {
