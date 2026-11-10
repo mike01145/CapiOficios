@@ -1,0 +1,263 @@
+fileFormatVersion: 2
+guid: 305d624247a72e848827a167dfcc3af2
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fondo_0
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 68
+        width: 1210
+        height: 699
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 22, y: 22, z: 23, w: 33}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1997f27499091ec4d9f866ffee437723
+      internalID: 845278907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: b277463e9ba431e429d24b959568e8c9
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Background_SelectOffice_0: 676339811
+      fondo_0: 845278907
+      fondo_1: -2011056844
+      fondo_10: -1297811982
+      fondo_100: 847038847
+      fondo_101: -918392860
+      fondo_102: 560997359
+      fondo_103: 620230915
+      fondo_104: -667247166
+      fondo_105: 1082574072
+      fondo_106: -566068741
+      fondo_107: -311612992
+      fondo_11: 979538223
+      fondo_12: 484419448
+      fondo_13: 1841128465
+      fondo_14: 123439576
+      fondo_15: -2141594182
+      fondo_16: 24883652
+      fondo_17: 1589351946
+      fondo_18: -344607897
+      fondo_19: -1248983467
+      fondo_2: 1111286617
+      fondo_20: 470496021
+      fondo_21: 618540503
+      fondo_22: 224969153
+      fondo_23: 2026245261
+      fondo_24: 2067266686
+      fondo_25: 2102591111
+      fondo_26: -1055566172
+      fondo_27: -1773160326
+      fondo_28: -756618730
+      fondo_29: -943361438
+      fondo_3: -1867103281
+      fondo_30: -922379340
+      fondo_31: 513672468
+      fondo_32: 520450391
+      fondo_33: 2089561497
+      fondo_34: -836388811
+      fondo_35: -1796793926
+      fondo_36: 102111779
+      fondo_37: -1192881255
+      fondo_38: 1961034757
+      fondo_39: 1411755142
+      fondo_4: -1236982238
+      fondo_40: 2061952526
+      fondo_41: -523066752
+      fondo_42: -181338693
+      fondo_43: -1821727471
+      fondo_44: 1611517666
+      fondo_45: -1448105006
+      fondo_46: -1399154044
+      fondo_47: 1125440947
+      fondo_48: -129520065
+      fondo_49: -543615390
+      fondo_5: 281348435
+      fondo_50: -526532065
+      fondo_51: -1415330525
+      fondo_52: 1483598666
+      fondo_53: -386846726
+      fondo_54: -251688162
+      fondo_55: -2068089674
+      fondo_56: 1493694499
+      fondo_57: 2016425424
+      fondo_58: 1851434339
+      fondo_59: 290367707
+      fondo_6: -359069514
+      fondo_60: 1196850089
+      fondo_61: 9786448
+      fondo_62: -1133474693
+      fondo_63: 85342903
+      fondo_64: -875223913
+      fondo_65: 1463725000
+      fondo_66: 709649289
+      fondo_67: -1259913956
+      fondo_68: 300988695
+      fondo_69: 21843120
+      fondo_7: -1326138386
+      fondo_70: 906275358
+      fondo_71: -1774943586
+      fondo_72: 1308680928
+      fondo_73: 1486179584
+      fondo_74: 1852919303
+      fondo_75: 2053356504
+      fondo_76: 887883155
+      fondo_77: -213525072
+      fondo_78: -2071267911
+      fondo_79: 1389745357
+      fondo_8: -1050735596
+      fondo_80: 115883227
+      fondo_81: -1654852159
+      fondo_82: -345575146
+      fondo_83: -39025791
+      fondo_84: -1385074522
+      fondo_85: 1281941275
+      fondo_86: -2043179529
+      fondo_87: -1509127051
+      fondo_88: -1875164643
+      fondo_89: 129068321
+      fondo_9: 85053621
+      fondo_90: -1288645833
+      fondo_91: 1761658739
+      fondo_92: 1116326155
+      fondo_93: 693579164
+      fondo_94: 740272093
+      fondo_95: -498914573
+      fondo_96: 2106166309
+      fondo_97: -521498671
+      fondo_98: 1295712437
+      fondo_99: 1296205641
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
