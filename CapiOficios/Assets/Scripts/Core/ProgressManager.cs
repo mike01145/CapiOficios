@@ -85,4 +85,15 @@ public class ProgressManager : MonoBehaviour
         PlayerPrefs.Save();
         OnProgressChanged?.Invoke();
     }
+    // Devuelve el nivel más alto desbloqueado (1 a LevelsPerCategory)
+    public int HighestUnlocked(Category c)
+    {
+        int highest = 1; // el nivel 1 siempre está abierto
+        for (int i = 1; i <= LevelsPerCategory; i++)
+            if (IsUnlocked(c, i)) highest = i;
+        return highest;
+    }
+
+    // Cantidad de niveles desbloqueados (coincide con HighestUnlocked)
+    public int UnlockedCount(Category c) => HighestUnlocked(c);
 }
