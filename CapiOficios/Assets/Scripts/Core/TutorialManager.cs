@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public enum StepCompletion { Button, GameStep, Feedback }
 
-[System.Serializable]
+[Serializable]
 public class TutorialStep
 {
     [TextArea(2, 4)] public string text;
@@ -33,7 +33,7 @@ public class TutorialStep
     public RectTransform uiTarget;
 }
 
-[System.Serializable]
+[Serializable]
 public class TutorialSequence
 {
     public string name;
@@ -51,7 +51,7 @@ public class TutorialSequence
 public class TutorialManager : MonoBehaviour
 {
     public enum Mode { Guided, Assisted }
-
+    [Header("Configuración")]
     [SerializeField] private Mode _mode = Mode.Guided;
     [SerializeField] private TutorialSequence[] _sequences;
     [Tooltip("Solo Assisted: qué secuencia usar. -1 = al azar.")]
@@ -60,7 +60,7 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private StepTracker _tracker;                 // opcional
     [Tooltip("Siempre clickeables en modo Guided (ej. el tacho).")]
     [SerializeField] private Highlightable[] _alwaysAllowed;
-
+    [SerializeField] private GameObject _servePointObject;
     [Header("UI")]
     [SerializeField] private GameObject _panel;
     [SerializeField] private TextMeshProUGUI _text;
@@ -207,9 +207,13 @@ public class TutorialManager : MonoBehaviour
         _running = true;
         var seq = _sequences[index];
 
+
         if (_recipeText != null) _recipeText.text = seq.recipe;
         if (_servePoint != null) _servePoint.SetOrder((int)seq.drink);
         if (_tracker != null) _tracker.ResetAll();
+
+        if (_mode == Mode.Guided && _servePointObject != null)
+            _servePointObject.SetActive(false);
 
         if (_mode == Mode.Assisted)
             foreach (var st in seq.steps)
@@ -262,8 +266,10 @@ public class TutorialManager : MonoBehaviour
 
         _running = false;
         ClearGuides();
+
         if (_panel != null) _panel.SetActive(false);
         if (_uiArrow != null) _uiArrow.gameObject.SetActive(false);
+        if (_servePointObject != null) _servePointObject.SetActive(true);
         _onFinished?.Invoke();
     }
 

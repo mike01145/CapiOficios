@@ -3,26 +3,27 @@ using UnityEngine;
 
 public class ShowLevelCurrent : MonoBehaviour
 {
-    [SerializeField] private GameObject gameObjectToShow_1;
-    [SerializeField] private GameObject gameObjectToShow_2;
-    [SerializeField] private GameObject gameObjectToShow_3;
-    int _currentLevel = 0;
-    private void Start()
-    {
-        ProgressManager.Instance.OnProgressChanged += ShowLevelCurrent_Refresh;
+    [SerializeField] private Category _category = Category.Barismo;
+    [SerializeField] private GameObject[] _objects;   // 0 = nada completado, 1 = completó el 1, etc.
 
-        _currentLevel = ProgressManager.Instance.HighestUnlocked(Category.Barismo);
-        ShowLevelCurrent_Refresh();
-    }
-    void OnDestroy()
+    private void OnEnable()
     {
-        ProgressManager.Instance.OnProgressChanged -= ShowLevelCurrent_Refresh;
+        ProgressManager.Instance.OnProgressChanged += Refresh;
+        Refresh();
     }
 
-    private void ShowLevelCurrent_Refresh()
+    private void OnDestroy()
     {
-        gameObjectToShow_1.SetActive(_currentLevel == 0);
-        gameObjectToShow_2.SetActive(_currentLevel == 1);
-        gameObjectToShow_3.SetActive(_currentLevel == 2);
+        if (ProgressManager.Instance != null)
+            ProgressManager.Instance.OnProgressChanged -= Refresh;
+    }
+
+    private void Refresh()
+    {
+        int completed = ProgressManager.Instance.CompletedCount(_category);
+        int active = Mathf.Min(completed, _objects.Length - 1);   // tope: el último objeto
+
+        for (int i = 0; i < _objects.Length; i++)
+            if (_objects[i] != null) _objects[i].SetActive(i == active);
     }
 }
