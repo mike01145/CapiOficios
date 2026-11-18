@@ -45,7 +45,6 @@ public class AuthHandler : MonoBehaviour
         SetBusy(false);
         if (_loginForm != null) _loginForm.ClearFields();
         PlayerProfile.SetName(user.nombre);
-        PlayerProfile.SetWelcomeDone();
         _panelSuccessLogin.SetActive(true);
     }
 
@@ -54,7 +53,6 @@ public class AuthHandler : MonoBehaviour
         SetBusy(false);
         if (_registerForm != null) _registerForm.ClearFields();
         PlayerProfile.SetName(user.nombre);
-        PlayerProfile.SetWelcomeDone();
         _panelSuccessRegister.SetActive(true);
     }
     private void AuthHandler_OnFail(string message)

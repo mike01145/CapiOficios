@@ -19,7 +19,7 @@ mergeInto(LibraryManager.library, {
             usuarioId: u.uid
           })
         ]).then(function () {
-          window.unityInstance.SendMessage("FirebaseManager", "OnAuthSuccess",
+          window.unityInstance.SendMessage("FirebaseManager", "OnRegisterSuccess",
             JSON.stringify({ userId: u.uid, email: email, nombre: nombre }));
         });
       })
@@ -39,7 +39,7 @@ mergeInto(LibraryManager.library, {
         return firebase.firestore().collection("usuarios").doc(u.uid).get()
           .then(function (doc) {
             var d = doc.exists ? doc.data() : {};
-            window.unityInstance.SendMessage("FirebaseManager", "OnAuthSuccess",
+            window.unityInstance.SendMessage("FirebaseManager", "OnLoginSuccess",
               JSON.stringify({ userId: u.uid, email: u.email, nombre: d.nombre || "" }));
           });
       })
@@ -53,37 +53,37 @@ mergeInto(LibraryManager.library, {
     firebase.auth().signOut();
   },
 
-  FirebaseUpdateProgress: function (userIdPtr, mCumplidas, mFallidas, nAlcanzado, tJugado) {
-    var userId = UTF8ToString(userIdPtr);
 
-    firebase.firestore().collection("progresos").doc(userId).set({
-      misionesCumplidas: mCumplidas,
-      misionesFalladas: mFallidas,
-      nivelAlcanzado: nAlcanzado,
-      tiempoJugado: tJugado,
-      usuarioId: userId
-    }, { merge: true })
-      .catch(function (error) {
-        console.error("Error al actualizar progreso:", error);
-      });
+  FirebaseUpdateProgress: function (userIdPtr, mCumplidas, mFallidas, nAlcanzado, tJugado, completadosPtr) {
+  var userId = UTF8ToString(userIdPtr);
+  var completados = UTF8ToString(completadosPtr);
+
+  firebase.firestore().collection("progresos").doc(userId).set({
+    misionesCumplidas: mCumplidas,
+    misionesFalladas: mFallidas,
+    nivelAlcanzado: nAlcanzado,
+    tiempoJugado: tJugado,
+    completados: completados,
+    usuarioId: userId
+  }, { merge: true })
+    .catch(function (error) { console.error("Error al actualizar progreso:", error); });
   },
 
   FirebaseGetProgress: function (userIdPtr) {
-    var userId = UTF8ToString(userIdPtr);
+  var userId = UTF8ToString(userIdPtr);
 
-    firebase.firestore().collection("progresos").doc(userId).get()
-      .then(function (doc) {
-        var d = doc.exists ? doc.data() : {};
-        window.unityInstance.SendMessage("FirebaseManager", "OnProgressLoaded", JSON.stringify({
-          misionesCumplidas: d.misionesCumplidas || 0,
-          misionesFalladas: d.misionesFalladas || 0,
-          nivelAlcanzado: d.nivelAlcanzado || 1,
-          tiempoJugado: d.tiempoJugado || 0
-        }));
-      })
-      .catch(function (error) {
-        console.error("Error al buscar el progreso:", error);
-      });
+  firebase.firestore().collection("progresos").doc(userId).get()
+    .then(function (doc) {
+      var d = doc.exists ? doc.data() : {};
+      window.unityInstance.SendMessage("FirebaseManager", "OnProgressLoaded", JSON.stringify({
+        misionesCumplidas: d.misionesCumplidas || 0,
+        misionesFalladas: d.misionesFalladas || 0,
+        nivelAlcanzado: d.nivelAlcanzado || 1,
+        tiempoJugado: d.tiempoJugado || 0,
+        completados: d.completados || ""
+      }));
+    })
+    .catch(function (error) { console.error("Error al buscar el progreso:", error); });
   },
 
   FirebaseAddCompletedMission: function (resultadoPtr, descripcionPtr, objetivoPtr, tiempo, userIdPtr) {

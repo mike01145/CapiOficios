@@ -639,11 +639,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8583989195324525934, guid: 66be1c4c5daaa0a43805d9be0b5d5550, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -20
+      value: -80
       objectReference: {fileID: 0}
     - target: {fileID: 8583989195324525934, guid: 66be1c4c5daaa0a43805d9be0b5d5550, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -20
+      value: -60
       objectReference: {fileID: 0}
     - target: {fileID: 8583989195324525934, guid: 66be1c4c5daaa0a43805d9be0b5d5550, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -972,7 +972,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &164322576
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1966,7 +1966,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &328515743
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3196,9 +3196,33 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 858422437}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1901881841}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1638173143}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -4253,7 +4277,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &703742061
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5537,7 +5561,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &858422438
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6342,8 +6366,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 1299529559, guid: fe1399b75115ee04182db42b23f3f0d7, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -8878,11 +8902,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8583989195324525934, guid: 66be1c4c5daaa0a43805d9be0b5d5550, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -20
+      value: -80
       objectReference: {fileID: 0}
     - target: {fileID: 8583989195324525934, guid: 66be1c4c5daaa0a43805d9be0b5d5550, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -20
+      value: -60
       objectReference: {fileID: 0}
     - target: {fileID: 8583989195324525934, guid: 66be1c4c5daaa0a43805d9be0b5d5550, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9569,11 +9593,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8583989195324525934, guid: 66be1c4c5daaa0a43805d9be0b5d5550, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -20
+      value: -80
       objectReference: {fileID: 0}
     - target: {fileID: 8583989195324525934, guid: 66be1c4c5daaa0a43805d9be0b5d5550, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -20
+      value: -60
       objectReference: {fileID: 0}
     - target: {fileID: 8583989195324525934, guid: 66be1c4c5daaa0a43805d9be0b5d5550, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -10947,7 +10971,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 1
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -11053,7 +11077,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Hola, c\xF3mo te gustar\xEDa \nque te llamemos?"
+  m_text: "Hola, \xBFc\xF3mo te gustar\xEDa \nque te llamemos?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4f0e8d08f9934954fb60d6140b2f6768, type: 2}
   m_sharedMaterial: {fileID: -7880659024423522935, guid: 4f0e8d08f9934954fb60d6140b2f6768, type: 2}
@@ -11548,11 +11572,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8583989195324525934, guid: 66be1c4c5daaa0a43805d9be0b5d5550, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -20
+      value: -80
       objectReference: {fileID: 0}
     - target: {fileID: 8583989195324525934, guid: 66be1c4c5daaa0a43805d9be0b5d5550, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -20
+      value: -60
       objectReference: {fileID: 0}
     - target: {fileID: 8583989195324525934, guid: 66be1c4c5daaa0a43805d9be0b5d5550, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

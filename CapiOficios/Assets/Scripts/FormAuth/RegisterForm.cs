@@ -44,8 +44,14 @@ public class RegisterForm : MonoBehaviour
         string pass = _password.text;
         string repeat = _repeatPassword.text;
 
+        if (string.IsNullOrEmpty(name) && string.IsNullOrEmpty(email)
+        && string.IsNullOrEmpty(pass) && string.IsNullOrEmpty(repeat))
+        { ShowError("Rellena todos los campos"); return; }
+
         if (string.IsNullOrEmpty(name)) { ShowError("Escribí tu nombre"); return; }
+        if (string.IsNullOrEmpty(email)) { ShowError("Escribí tu email"); return; }
         if (!EmailRegex.IsMatch(email)) { ShowError("El email no es válido"); return; }
+        if (string.IsNullOrEmpty(pass)) { ShowError("Escribí tu contraseña"); return; }
         if (pass.Length < _minPasswordLength) { ShowError($"La contraseña debe tener al menos {_minPasswordLength} caracteres"); return; }
         if (pass != repeat) { ShowError("Las contraseñas no coinciden"); return; }
 

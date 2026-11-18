@@ -9,12 +9,15 @@ public class ProgressData
     public int misionesFalladas;
     public int nivelAlcanzado;
     public int tiempoJugado;
+    public string completados;
 }
 public class FirebaseManager : MonoBehaviour
 {
     public static FirebaseManager Instance { get; private set; }
 
-    public UserData CurrentUser { get; private set; }
+    public UserData GetCurrentUser { get; private set; }
+
+    public string GetCompletados { get; private set; }
 
     public event Action<UserData> OnAuthLoginSuccess;
     public event Action<UserData> OnAuthRegisterSuccess;
@@ -28,7 +31,7 @@ public class FirebaseManager : MonoBehaviour
         [DllImport("__Internal")] private static extern void FirebaseUpdateProgress(string userId, int mCompleted, int mFailed, int nReached, int tPlayed);
         [DllImport("__Internal")] private static extern void FirebaseGetProgress(string userId);
         [DllImport("__Internal")] private static extern void FirebaseAddCompletedMission(string result, string description, string target, int time, string userId);
-
+        [DllImport("__Internal")] private static extern void FirebaseUpdateProgress(string userId, int mCompleted, int mFailed, int nReached, int tPlayed, string completados);
 #endif
     private void Awake()
     {
@@ -36,13 +39,13 @@ public class FirebaseManager : MonoBehaviour
         Instance = this;
         gameObject.name = "FirebaseManager";
         DontDestroyOnLoad(gameObject);
-        CurrentUser = SessionStore.Load();
+        GetCurrentUser = SessionStore.Load();
     }
     // Auth
     public void Login(string email, string password)
     {
 #if UNITY_WEBGL && !UNITY_EDITOR
-                FirebaseLogin(email, password);
+             FirebaseLogin(email, password);
 #else
         OnLoginSuccess(JsonUtility.ToJson(new UserData { userId = "editor", email = email, nombre = "Editor" }));
 #endif
@@ -58,7 +61,7 @@ public class FirebaseManager : MonoBehaviour
     }
     public void Logout()
     {
-        CurrentUser = null;
+        GetCurrentUser = null;
         SessionStore.Clear();
 
 #if UNITY_WEBGL && !UNITY_EDITOR
@@ -66,27 +69,27 @@ public class FirebaseManager : MonoBehaviour
 #endif
     }
     // Progreso
-    public void UpdateProgress(int mCompleted, int mFailed, int nReached, int tPlayed)
+    public void UpdateProgress(int mCompleted, int mFailed, int nReached, int tPlayed, string completados)
     {
-        if (CurrentUser == null) return;
+        if (GetCurrentUser == null) return;
 #if UNITY_WEBGL && !UNITY_EDITOR
-        FirebaseUpdateProgress(CurrentUser.userId, mCompleted, mFailed, nReached, tPlayed);
+        FirebaseUpdateProgress(GetCurrentUser.userId, mCompleted, mFailed, nReached, tPlayed, GetCompletados);
 #endif
     }
 
     public void GetProgress()
     {
-        if (CurrentUser == null) return;
+        if (GetCurrentUser == null) return;
 #if UNITY_WEBGL && !UNITY_EDITOR
-        FirebaseGetProgress(CurrentUser.userId);
+        FirebaseGetProgress(GetCurrentUser.userId);
 #endif
     }
 
     public void AddQuestCompleted(string result, string description, string target, int time)
     {
-        if (CurrentUser == null) return;
+        if (GetCurrentUser == null) return;
 #if UNITY_WEBGL && !UNITY_EDITOR
-        FirebaseAddCompletedMission(result, description, target, time, CurrentUser.userId);
+        FirebaseAddCompletedMission(result, description, target, time, GetCurrentUser.userId);
 #endif
     }
 
@@ -99,6 +102,8 @@ public class FirebaseManager : MonoBehaviour
     public void OnLoginSuccess(string json)
     {
         var user = SaveUser(json);
+        Debug.Log(json);
+        Debug.Log($"Login OK: {GetCurrentUser.nombre} ({GetCurrentUser.email})");
         OnAuthLoginSuccess?.Invoke(user);
     }
 
@@ -111,9 +116,9 @@ public class FirebaseManager : MonoBehaviour
     // Lógica común
     private UserData SaveUser(string json)
     {
-        CurrentUser = JsonUtility.FromJson<UserData>(json);
-        SessionStore.Save(CurrentUser);
-        return CurrentUser;
+        GetCurrentUser = JsonUtility.FromJson<UserData>(json);
+        SessionStore.Save(GetCurrentUser);
+        return GetCurrentUser;
     }
     public void OnAuthError(string code)
     {

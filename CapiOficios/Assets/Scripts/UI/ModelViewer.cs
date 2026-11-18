@@ -13,7 +13,7 @@ public class ModelViewer : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     [SerializeField] private float _autoRotateSpeed = 20f;
     [SerializeField] private float _idleTime = 2f;
     [Header("Zoom (rueda del mouse)")]
-    [SerializeField] private bool _allowZoom = true;
+    [SerializeField] private bool _allowZoom = false;
     [SerializeField] private float _minFov = 20f;
     [SerializeField] private float _maxFov = 50f;
     [Header("Calidad")]

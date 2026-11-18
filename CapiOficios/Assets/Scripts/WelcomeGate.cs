@@ -8,6 +8,7 @@ public class WelcomeGate : MonoBehaviour
     private void Start()
     {
         bool _done = PlayerProfile.GetHasWelcomeBeenDone;
+        Debug.Log($"WelcomeGate: HasWelcomeBeenDone = {_done}");
         _welcomePanel.SetActive(!_done);
         _selectOfficePanel.SetActive(_done);
     }

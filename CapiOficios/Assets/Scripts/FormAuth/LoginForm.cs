@@ -32,7 +32,8 @@ public class LoginForm : MonoBehaviour
     {
         string email = _email.text.Trim();
         string pass = _password.text;
-
+        if (string.IsNullOrEmpty(email) && string.IsNullOrEmpty(pass)) { ShowError("Rellena todos los campos"); return; }
+        if (string.IsNullOrEmpty(email)) { ShowError("Escribí tu email"); return; }
         if (!EmailRegex.IsMatch(email)) { ShowError("El email no es válido"); return; }
         if (string.IsNullOrEmpty(pass)) { ShowError("Escribí tu contraseña"); return; }
 

@@ -39,7 +39,16 @@ public class ProgressManager : MonoBehaviour
         _instance = this;
         DontDestroyOnLoad(gameObject);
     }
-
+    private void Start()
+    {
+        // Cuando Firebase devuelve el progreso, lo mezclamos con el local
+        FirebaseManager.Instance.ProgressLoaded += ApplyRemote;
+    }
+    private void OnDestroy()
+    {
+        if (_instance == this && FirebaseManager.Instance != null)
+            FirebaseManager.Instance.ProgressLoaded -= ApplyRemote;
+    }
     // Niveles numerados del 1 al 3
     private static string Key(Category c, int level) => $"progress_{c}_{level}";
 
@@ -72,6 +81,7 @@ public class ProgressManager : MonoBehaviour
         if (IsCompleted(c, level)) return;
         PlayerPrefs.SetInt(Key(c, level), 1);
         PlayerPrefs.Save(); // importante en WebGL para que se escriba ya
+        SyncToServer(c, level);
         OnProgressChanged?.Invoke();
     }
 
@@ -96,4 +106,40 @@ public class ProgressManager : MonoBehaviour
 
     // Cantidad de niveles desbloqueados (coincide con HighestUnlocked)
     public int UnlockedCount(Category c) => HighestUnlocked(c);
+
+    private void ApplyRemote(ProgressData data)
+    {
+        if (!string.IsNullOrEmpty(data.completados))
+        {
+            foreach (var token in data.completados.Split(','))
+            {
+                var parts = token.Split('_');
+                if (parts.Length != 2) continue;
+                if (!Enum.TryParse(parts[0], out Category c)) continue;
+                if (!int.TryParse(parts[1], out int level)) continue;
+                PlayerPrefs.SetInt(Key(c, level), 1);
+            }
+            PlayerPrefs.Save();
+        }
+        OnProgressChanged?.Invoke();
+    }
+    private string BuildCompleted()
+    {
+        var list = new System.Collections.Generic.List<string>();
+        foreach (Category c in Enum.GetValues(typeof(Category)))
+            for (int i = 1; i <= LevelsPerCategory; i++)
+                if (IsCompleted(c, i)) list.Add($"{c}_{i}");
+        return string.Join(",", list);
+    }
+    private void SyncToServer(Category c, int level)
+    {
+        var fm = FirebaseManager.Instance;
+        if (fm.GetCurrentUser == null) return;
+
+        int total = 0;
+        foreach (Category cat in Enum.GetValues(typeof(Category))) total += CompletedCount(cat);
+
+        fm.UpdateProgress(total, 0, HighestUnlocked(c), 0, BuildCompleted());
+        fm.AddQuestCompleted("completada", $"{c} nivel {level}", $"{c}_{level}", 0);
+    }
 }
