@@ -3404,7 +3404,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Version 0.4.0
+  m_text: Version 0.5.0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f4b9a42b88052d64d9867fd379f0633d, type: 2}
   m_sharedMaterial: {fileID: -5846931079281544199, guid: f4b9a42b88052d64d9867fd379f0633d, type: 2}
@@ -8392,7 +8392,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9103462992264739685, guid: f60a79c4e66b9944fbc83f092546b211, type: 3}
       propertyPath: m_PixelsPerUnitMultiplier
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11752,8 +11752,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1240057245, guid: 480274af4b943ca4fb814b67ad24fb44, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: -297353503, guid: 12cccb02ec4d2b64ab15b4171a312483, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -11761,7 +11761,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1.4
+  m_PixelsPerUnitMultiplier: 3
 --- !u!1001 &1285583713908507210
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12073,8 +12073,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2145751717, guid: 2c28ece1efddf8a46a8de5d54964bceb, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 1447250533, guid: 89fc04676f4486c4586d2124be16478e, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -12082,7 +12082,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1.4
+  m_PixelsPerUnitMultiplier: 3
 --- !u!1001 &2136418800004589723
 PrefabInstance:
   m_ObjectHideFlags: 0
