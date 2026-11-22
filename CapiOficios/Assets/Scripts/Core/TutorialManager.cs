@@ -31,6 +31,8 @@ public class TutorialStep
     public Highlightable[] alsoAllowed;
     [Tooltip("Elemento de UI al que apunta la flecha (ej. el panel de receta).")]
     public RectTransform uiTarget;
+    [Tooltip("Paso de espera: bloquea todos los clicks hasta que termine.")]
+    public bool lockClicks;
 }
 
 [Serializable]
@@ -46,6 +48,8 @@ public class TutorialSequence
     public int baseTo = 13;             // hasta acá, sin incluir (hasta Extract)
     public TutorialStep[] introSteps;
     public TutorialStep[] steps;
+    [NonSerialized] public TutorialStep[] built;
+    public TutorialStep[] Final => built ?? steps;
 }
 
 public class TutorialManager : MonoBehaviour
@@ -68,7 +72,8 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _recipeText;
     [SerializeField] private RectTransform _uiArrow;
     [SerializeField] private Vector2 _arrowOffset = new(0f, -70f);
-
+    [Header("Ayuda automática")]
+    [SerializeField] private int _mistakesForHelp = 3;
     [Header("Capibara")]
     [SerializeField] private GameObject _helpBubble;
     [SerializeField] private Button _helpButton;
@@ -90,13 +95,14 @@ public class TutorialManager : MonoBehaviour
     }
     private int _seqIndex;
     private int _stepIndex = -1;
+    private int _mistakes;
     private bool _running;
-    private bool _restored;
     private Highlightable[] _guided = new Highlightable[0];
+    private Highlightable[] _helped = new Highlightable[0];
     private Coroutine _helpRoutine;
     private Vector3 _arrowBase;
 
-    private TutorialStep Current => _running ? _sequences[_seqIndex].steps[_stepIndex] : null;
+    private TutorialStep Current => _running ? _sequences[_seqIndex].Final[_stepIndex] : null;
 
     private void OnEnable()
     {
@@ -116,13 +122,13 @@ public class TutorialManager : MonoBehaviour
         for (int i = 0; i < _sequences.Length; i++)
         {
             var s = _sequences[i];
-            if (s.baseSequence < 0 || s.baseSequence >= i) continue;
+            if (s.baseSequence < 0 || s.baseSequence >= i) { s.built = s.steps; continue; }
 
-            var b = _sequences[s.baseSequence].steps;
+            var b = _sequences[s.baseSequence].Final;
             var list = new System.Collections.Generic.List<TutorialStep>(s.introSteps);
             for (int k = s.baseFrom; k < Mathf.Min(s.baseTo, b.Length); k++) list.Add(b[k]);
             list.AddRange(s.steps);
-            s.steps = list.ToArray();
+            s.built = list.ToArray();
         }
     }
     private void Start()
@@ -140,7 +146,7 @@ public class TutorialManager : MonoBehaviour
         {
             // todo lo que se "revela" arranca oculto
             foreach (var seq in _sequences)
-                foreach (var st in seq.steps)
+                foreach (var st in seq.Final)
                     foreach (var go in st.reveal) if (go != null) go.SetActive(false);
             BeginSequence(0);
         }
@@ -169,36 +175,14 @@ public class TutorialManager : MonoBehaviour
 
     private void TutorialManager_OnFeedback(object sender, GameEvents.FeedbackEventArgs e)
     {
-        if (_mode == Mode.Guided && _running)
-        {
-            if (e.Feedback == Feedback.Return) { RestoreGuide(); return; }
-            if (e.Feedback == Feedback.Pickup && _restored)
-            {
-                _restored = false;
-                ClearGuides();
-                SetGuides(Current.targets);   // vuelve a señalar el paso actual
-            }
-        }
+        if (_running && (e.Feedback == Feedback.Refused || e.Feedback == Feedback.WrongDrink))
+            RegisterMistake();
 
         var s = Current;
         if (s == null || s.completion != StepCompletion.Feedback || s.feedback != e.Feedback) return;
         if (s.feedbackSource != null &&
             (e.Source == null || !(e.Source == s.feedbackSource || e.Source.IsChildOf(s.feedbackSource)))) return;
         Advance();
-    }
-    private void RestoreGuide()
-    {
-        if (_stepIndex < 1) return;
-        var cur = Current;
-        if (cur.completion == StepCompletion.Feedback && cur.feedback == Feedback.Pickup) return;
-
-        var prev = _sequences[_seqIndex].steps[_stepIndex - 1];
-        if (prev.completion != StepCompletion.Feedback || prev.feedback != Feedback.Pickup) return;
-
-        ClearGuides();
-        SetGuides(prev.targets);
-        _restored = true;
-        GameEvents.ShowMessage("Volvé a agarrarlo.");
     }
     // ---------- Flujo ----------
     private void BeginSequence(int index)
@@ -216,7 +200,7 @@ public class TutorialManager : MonoBehaviour
             _servePointObject.SetActive(false);
 
         if (_mode == Mode.Assisted)
-            foreach (var st in seq.steps)
+            foreach (var st in seq.Final)
                 foreach (var go in st.reveal) if (go != null) go.SetActive(true);
 
         OnSequenceStarted?.Invoke(this, new SequenceStartedArgs { sequence = _sequences[index], stepIndex = 0 });
@@ -226,9 +210,11 @@ public class TutorialManager : MonoBehaviour
     private void GoToStep(int index)
     {
         ClearGuides();
+        ClearHelp();
         HideHelpBubble();
+        _mistakes = 0;
 
-        var steps = _sequences[_seqIndex].steps;
+        var steps = _sequences[_seqIndex].Final;
 
         // En Assisted los pasos de "Siguiente" (introducción) no existen
         if (_mode == Mode.Assisted)
@@ -266,6 +252,7 @@ public class TutorialManager : MonoBehaviour
 
         _running = false;
         ClearGuides();
+        ClearHelp();
 
         if (_panel != null) _panel.SetActive(false);
         if (_uiArrow != null) _uiArrow.gameObject.SetActive(false);
@@ -279,18 +266,35 @@ public class TutorialManager : MonoBehaviour
     {
         if (Current != null && Current.completion == StepCompletion.Button) Advance();
     }
+    private void RegisterMistake()
+    {
+        var s = Current;
+        if (s == null || s.lockClicks || s.completion == StepCompletion.Button) return;
 
-
+        _mistakes++;
+        if (_mistakes >= _mistakesForHelp)
+        {
+            _mistakes = 0;
+            ShowHelp();   // el capibara habla y resalta lo que hay que hacer
+        }
+    }
     // ---------- Bloqueo de clicks (solo Guided) ----------
     private bool IsClickAllowed(Highlightable h)
     {
         if (_mode != Mode.Guided || !_running) return true;
+        if (Current != null && Current.lockClicks)
+        {
+            GameEvents.ShowMessage("Esperá a que termine.");
+            return false;
+        }
         if (Contains(_alwaysAllowed, h)) return true;
 
+        if (Current != null && !Contains(Current.targets, h) && !Contains(Current.alsoAllowed, h))
+            RegisterMistake();
         // lo de los pasos actuales y anteriores sigue permitido (para poder re-agarrarlo)
         for (int q = 0; q <= _seqIndex; q++)
         {
-            var steps = _sequences[q].steps;
+            var steps = _sequences[q].Final;
             int last = (q == _seqIndex) ? _stepIndex : steps.Length - 1;
             for (int i = 0; i <= last; i++)
                 if (Contains(steps[i].targets, h) || Contains(steps[i].alsoAllowed, h)) return true;
@@ -308,6 +312,16 @@ public class TutorialManager : MonoBehaviour
     }
 
     // ---------- Resaltado ----------
+    private void SetHelp(Highlightable[] list)
+    {
+        _helped = list ?? new Highlightable[0];
+        foreach (var h in _helped) if (h != null) h.SetHelp(true);
+    }
+    private void ClearHelp()
+    {
+        foreach (var h in _helped) if (h != null) h.SetHelp(false);
+        _helped = new Highlightable[0];
+    }
     private void SetGuides(Highlightable[] list)
     {
         _guided = list ?? new Highlightable[0];
@@ -334,8 +348,9 @@ public class TutorialManager : MonoBehaviour
         }
         else
         {
+            ClearHelp();
             _helpText.text = string.IsNullOrEmpty(s.helpText) ? s.text : s.helpText;
-            SetGuides(s.targets);
+            SetHelp(s.targets);
         }
 
         if (_helpRoutine != null) StopCoroutine(_helpRoutine);
@@ -347,7 +362,7 @@ public class TutorialManager : MonoBehaviour
         yield return new WaitForSecondsRealtime(_helpSeconds);
         _helpRoutine = null;
         _helpBubble.SetActive(false);
-        if (_mode == Mode.Assisted) ClearGuides();
+        ClearHelp();
     }
 
     private void HideHelpBubble()

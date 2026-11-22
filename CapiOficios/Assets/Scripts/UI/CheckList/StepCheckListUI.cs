@@ -83,9 +83,10 @@ public class StepChecklistUI : MonoBehaviour
         _rows.Clear();
         _rowStep.Clear();
 
-        for (int i = 0; i < e.sequence.steps.Length; i++)
+        var steps = e.sequence.Final;   // <- antes: e.sequence.steps
+        for (int i = 0; i < steps.Length; i++)
         {
-            var st = e.sequence.steps[i];
+            var st = steps[i];
             if (string.IsNullOrEmpty(st.listLabel)) continue;
             if (_tutorialManager.GetIsAssisted && st.onlyGuided) continue;
 
@@ -93,7 +94,6 @@ public class StepChecklistUI : MonoBehaviour
             row.Setup(st.listLabel);
             _rows.Add(row);
             _rowStep.Add(i);
-
         }
     }
 }

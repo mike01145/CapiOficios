@@ -5,7 +5,6 @@ public class EspressoMachine : MonoBehaviour, IClickable
 {
     [SerializeField] private GroupHead _groupHead;
     [SerializeField] private ItemSlot _cupSlot;          // lugar bajo la salida (acepta Cup)
-    [SerializeField] private SteamWand _steamWand;       // opcional
     [SerializeField] private float _extractSeconds = 8f;
     [SerializeField] private GameObject _coffeeStream;   // opcional: chorrito de café
 
@@ -28,8 +27,7 @@ public class EspressoMachine : MonoBehaviour, IClickable
             case ItemType.Cup: _cupSlot.TryPlace(held); break;
             case ItemType.Portafilter: _groupHead.TryPlace(held); break;
             case ItemType.MilkJug:
-                if (_steamWand != null) _steamWand.TryPlace(held);
-                else hand.Say("Eso no va en la máquina.");
+                hand.Say("Eso no va en la máquina.");
                 break;
             default: hand.Say("Eso no va en la máquina."); break;
         }

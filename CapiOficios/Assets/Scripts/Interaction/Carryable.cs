@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public enum ItemType { Beans, Portafilter, Tamper, Cup, MilkJug }
+public enum ItemType { Beans, Portafilter, Tamper, Cup, MilkJug, MilkCarton, ChocolateBox }
 
 [RequireComponent(typeof(Highlightable))]
 public class Carryable : MonoBehaviour, IClickable

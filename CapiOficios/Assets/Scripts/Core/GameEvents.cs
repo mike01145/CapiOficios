@@ -19,7 +19,7 @@ public enum GameStep
 {
     None = 0,
     LoadBeans, Grind, Tamp, LockPortafilter, Extract,
-    HeatMilk, PourMilk, AddWater, Deliver
+    HeatMilk, PourMilk, AddWater, Deliver, FillJug, PourJug, AddChocolate
 }
 
 public readonly struct ProgressInfo

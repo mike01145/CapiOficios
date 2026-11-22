@@ -1,34 +1,28 @@
 using UnityEngine;
 
-public enum Drink { Espresso, Americano, Latte, Cappuccino }
-public enum MilkQuality { None, Cold, Good, Burnt }
+public enum Drink { Espresso, Latte, Mocha }
 
 public class Cup : Carryable
 {
-    [Header("Visuales opcionales")]
+    [Header("Indicadores (los armás vos)")]
     [SerializeField] private GameObject _espressoVisual;
-    [SerializeField] private GameObject _waterVisual;
     [SerializeField] private GameObject _milkVisual;
-    [SerializeField] private GameObject _foamVisual;
+    [SerializeField] private GameObject _chocolateVisual;
 
     public bool GetHasEspresso { get; private set; }
-    public bool GetHasWater { get; private set; }
-    public bool GetFoam { get; private set; }
-    public MilkQuality GetMilk { get; private set; }
-    public bool GetIsEmpty => !GetHasEspresso && !GetHasWater && GetMilk == MilkQuality.None;
+    public bool GetHasMilk { get; private set; }
+    public bool GetHasChocolate { get; private set; }
+    public bool GetIsEmpty => !GetHasEspresso && !GetHasMilk && !GetHasChocolate;
 
     private void Start() => Refresh();
 
     public void AddEspresso() { GetHasEspresso = true; Refresh(); }
-    public void AddWater() { GetHasWater = true; Refresh(); }
-    public void AddMilk(MilkQuality quality, bool foam) { GetMilk = quality; GetFoam = foam; Refresh(); }
 
     public override void ResetState()
     {
         GetHasEspresso = false;
-        GetHasWater = false;
-        GetFoam = false;
-        GetMilk = MilkQuality.None;
+        GetHasMilk = false;
+        GetHasChocolate = false;
         Refresh();
     }
 
@@ -36,10 +30,9 @@ public class Cup : Carryable
     {
         return d switch
         {
-            Drink.Espresso => GetHasEspresso && !GetHasWater && GetMilk == MilkQuality.None,
-            Drink.Americano => GetHasEspresso && GetHasWater && GetMilk == MilkQuality.None,
-            Drink.Latte => GetHasEspresso && !GetHasWater && GetMilk == MilkQuality.Good && !GetFoam,
-            Drink.Cappuccino => GetHasEspresso && !GetHasWater && GetMilk == MilkQuality.Good && GetFoam,
+            Drink.Espresso => GetHasEspresso && !GetHasMilk && !GetHasChocolate,
+            Drink.Latte => GetHasEspresso && GetHasMilk && !GetHasChocolate,
+            Drink.Mocha => GetHasEspresso && GetHasMilk && GetHasChocolate,
             _ => false,
         };
     }
@@ -47,38 +40,59 @@ public class Cup : Carryable
     private void Refresh()
     {
         if (_espressoVisual != null) _espressoVisual.SetActive(GetHasEspresso);
-        if (_waterVisual != null) _waterVisual.SetActive(GetHasWater);
-        if (_milkVisual != null) _milkVisual.SetActive(GetMilk != MilkQuality.None);
-        if (_foamVisual != null) _foamVisual.SetActive(GetFoam && GetMilk != MilkQuality.None);
+        if (_milkVisual != null) _milkVisual.SetActive(GetHasMilk);
+        if (_chocolateVisual != null) _chocolateVisual.SetActive(GetHasChocolate);
     }
 
     public override void OnClicked()
     {
         var hand = PlayerHand.Instance;
-        var jug = hand.GetHeld as MilkJug;
-        if (jug != null) { Pour(hand, jug); return; }
+        var held = hand.GetHeld;
+        if (held is MilkJug jug) { PourMilk(hand, jug); return; }
+        if (held != null && held.Type == ItemType.ChocolateBox) { AddChocolate(hand, held); return; }
         base.OnClicked();
     }
 
-    // Con la jarra en la mano, click en la taza = verter la leche
-    private void Pour(PlayerHand hand, MilkJug jug)
+    private void PourMilk(PlayerHand hand, MilkJug jug)
+    {
+        if (GetBusy || jug.GetBusy) { hand.Say("Está en uso, esperá a que termine."); return; }
+        if (!jug.GetHasMilk) { hand.Say("La jarra está vacía."); return; }
+        if (!jug.GetHot) { hand.Say("Primero calentá la jarra tocando la varilla de vapor."); return; }
+        if (GetHasMilk) { hand.Say("La taza ya tiene leche."); return; }
+
+        hand.ReleaseHeld();
+        GetBusy = true;
+        jug.GetBusy = true;
+        StartCoroutine(PourHelper.Pour(jug, transform,
+            onPoured: () =>
+            {
+                GetHasMilk = true;
+                Refresh();
+                jug.ResetState();
+                GameEvents.Raise(Feedback.Pour, transform);
+                GameEvents.CompleteStep(GameStep.PourJug);
+                hand.Say("Vertiste la leche en la taza.");
+            },
+            onDone: () => { GetBusy = false; jug.GetBusy = false; }));
+    }
+
+    private void AddChocolate(PlayerHand hand, Carryable box)
     {
         if (GetBusy) { hand.Say("Está en uso, esperá a que termine."); return; }
+        if (!GetHasMilk) { hand.Say("El chocolate va al final, sobre la leche."); return; }
+        if (GetHasChocolate) { hand.Say("La taza ya tiene chocolate."); return; }
 
-        if (jug.GetMilk == MilkQuality.None) { hand.Say("La jarra está vacía."); return; }
-        if (GetMilk != MilkQuality.None) { hand.Say("La taza ya tiene leche."); return; }
-
-        MilkQuality q = jug.GetMilk;
-        AddMilk(q, jug.GetFoamed);
-        jug.ResetState();
-        GameEvents.Raise(Feedback.Pour, transform);
-
-        if (q == MilkQuality.Good)
-        {
-            GameEvents.CompleteStep(GameStep.PourMilk);
-            hand.Say("Leche vertida.");
-        }
-        else if (q == MilkQuality.Cold) hand.Say("Vertiste leche fría. Quizás convenga descartar la taza.");
-        else hand.Say("Vertiste leche quemada. Conviene descartar la taza.");
+        hand.ReleaseHeld();
+        GetBusy = true;
+        StartCoroutine(PourHelper.Pour(box, transform,
+            onPoured: () =>
+            {
+                GetHasChocolate = true;
+                Refresh();
+                GameEvents.Raise(Feedback.Pour, transform);
+                GameEvents.CompleteStep(GameStep.AddChocolate);
+                hand.Say("Agregaste chocolate.");
+            },
+            onDone: () => GetBusy = false));
     }
 }

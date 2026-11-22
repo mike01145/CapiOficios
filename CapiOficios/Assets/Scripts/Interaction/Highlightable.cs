@@ -5,13 +5,10 @@ using UnityEngine.Events;
 
 public class Highlightable : MonoBehaviour
 {
-    public enum Mode { Outline, Tint }
-
-    [SerializeField] private Mode _mode = Mode.Tint;
-
-    [Header("Modo Outline")]
     [Tooltip("Material de contorno (shader 'inverted hull'). Se agrega al objeto mientras está resaltado.")]
-    [SerializeField] private Material _outlineMaterial;
+    [Header("Modo QuickOutline")]
+    [SerializeField] private Outline _quickOutline;
+    [SerializeField] private bool _highlightOnHover = false;
 
     [Header("Modo Tint")]
     [SerializeField] private Color _tintColor = new(1f, 0.85f, 0.4f);
@@ -31,19 +28,18 @@ public class Highlightable : MonoBehaviour
     private bool _hovered;
     private bool _selected;
     private bool _applied;
-    private bool warned;
+    private bool _warned;
+    private bool _helped;
 
-    private void Awake()
-    {
-        _renderers = GetComponentsInChildren<Renderer>();
-        _block = new MaterialPropertyBlock();
-    }
+    private void Awake() => EnsureInit();
     private void Update()
     {
-        if (!_guided || _mode != Mode.Tint) return;
+        if (!_guided) return;
+        EnsureInit();
         float t = Mathf.PingPong(Time.unscaledTime * 2f, 1f) * 0.7f;
         foreach (var r in _renderers)
         {
+            if (r == null) continue;
             Material m = r.sharedMaterial;
             if (!HasColorProperty(m, _colorProperty)) continue;
             Color o = m.GetColor(_colorProperty);
@@ -60,21 +56,36 @@ public class Highlightable : MonoBehaviour
         (value ? _onHoverEnter : _onHoverExit)?.Invoke();
         Refresh();
     }
+    public void SetHelp(bool value)
+    {
+        EnsureInit();
+        if (_helped == value) return;
+        _helped = value;
+        if (_quickOutline != null) _quickOutline.enabled = value;
+    }
+    private void EnsureInit()
+    {
+        if (_renderers != null) return;
+        _renderers = GetComponentsInChildren<Renderer>(true);
+        _block = new MaterialPropertyBlock();
+        if (_quickOutline != null) _quickOutline.enabled = false;
+    }
     public void SetGuide(bool value)
     {
+        EnsureInit();
         if (_guided == value) return;
         _guided = value;
         Refresh();
     }
     public void SetSelected(bool value)
     {
-        if (_hovered == value) return;
+        if (_selected == value) return;
+        _selected = value;
         Refresh();
     }
 
     public void Click()
     {
-        Debug.Log($"Click en {name} | filtro: {(ClickFilter == null ? "sin filtro" : ClickFilter(this).ToString())}");
         if (ClickFilter != null && !ClickFilter(this)) return;
         GameEvents.Raise(Feedback.Click, transform);
         foreach (var c in GetComponents<IClickable>()) c.OnClicked();
@@ -83,26 +94,12 @@ public class Highlightable : MonoBehaviour
 
     private void Refresh()
     {
-        bool shouldBeOn = _hovered || _selected || _guided;
+        EnsureInit();
+        bool shouldBeOn = (_hovered && _highlightOnHover) || _selected || _guided;
         if (shouldBeOn == _applied) return;
         _applied = shouldBeOn;
-
-        if (_mode == Mode.Outline) ApplyOutline(shouldBeOn);
-        else ApplyTint(shouldBeOn);
+        ApplyTint(shouldBeOn);
     }
-
-    private void ApplyOutline(bool on)
-    {
-        if (_outlineMaterial == null) return;
-        foreach (var r in _renderers)
-        {
-            var mats = new List<Material>(r.sharedMaterials);
-            mats.RemoveAll(m => m == _outlineMaterial);
-            if (on) mats.Add(_outlineMaterial);
-            r.sharedMaterials = mats.ToArray();
-        }
-    }
-
     private void ApplyTint(bool on)
     {
         foreach (var r in _renderers)
@@ -112,8 +109,8 @@ public class Highlightable : MonoBehaviour
             Material m = r.sharedMaterial;
             if (!HasColorProperty(m, _colorProperty))
             {
-                if (!warned)
-                    warned = true;
+                if (!_warned)
+                    _warned = true;
                 continue;
             }
 
@@ -137,12 +134,9 @@ public class Highlightable : MonoBehaviour
         if (_hovered) GameEvents.SetHovered(transform, false);
         _hovered = false;
         _selected = false;
-        if (_applied)
-        {
-            _applied = true; // fuerza el apagado
-            _applied = false;
-            if (_mode == Mode.Outline) ApplyOutline(false);
-            else ApplyTint(false);
-        }
+        _guided = false;
+        _helped = false;
+        if (_quickOutline != null) _quickOutline.enabled = false;
+        if (_applied) { _applied = false; ApplyTint(false); }
     }
 }
