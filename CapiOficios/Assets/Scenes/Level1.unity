@@ -16636,8 +16636,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<b>Empecemos \npor el Nivel 1.</b>\nLos dem\xE1s estar\xE1n\n disponibles
-    \ncuando avances"
+  m_text: "<b>Ya estamos \nlistos para ir\nal Nivel 3. </b>\nTambien puedes\nvolver
+    a repasar\nlos anteriores \nsi necesitas."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f4b9a42b88052d64d9867fd379f0633d, type: 2}
   m_sharedMaterial: {fileID: -5846931079281544199, guid: f4b9a42b88052d64d9867fd379f0633d, type: 2}
@@ -16664,8 +16664,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -25522,7 +25522,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -11920094, guid: da74024c892dd6346bcc6a2b8d6487fd, type: 3}
+  m_Sprite: {fileID: -354819993, guid: a7f69f6e590ef404ca154112a6e9c2db, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -49787,7 +49787,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelButton
   _category: 0
   _level: 3
-  _sceneToLoad: 
+  _sceneToLoad: Level3
   _lockedIcon: {fileID: 582544608}
   _completedIcon: {fileID: 0}
 --- !u!1 &978331502
@@ -58012,7 +58012,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -11920094, guid: da74024c892dd6346bcc6a2b8d6487fd, type: 3}
+  m_Sprite: {fileID: -354819993, guid: a7f69f6e590ef404ca154112a6e9c2db, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -75952,6 +75952,50 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1473615711}
   m_Mesh: {fileID: 9067829280381093136, guid: 0b3a540dc33ed964aaab8050b9258cd7, type: 3}
+--- !u!1 &1474362282
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1474362283}
+  - component: {fileID: 1474362284}
+  m_Layer: 0
+  m_Name: UIClickSound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1474362283
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474362282}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1474362284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474362282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 781af1b1097def9428731e857ebf7fbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UiClickSounds
 --- !u!1 &1475711792
 GameObject:
   m_ObjectHideFlags: 0
@@ -115500,3 +115544,4 @@ SceneRoots:
   - {fileID: 1986807671}
   - {fileID: 1414337025}
   - {fileID: 293338796}
+  - {fileID: 1474362283}

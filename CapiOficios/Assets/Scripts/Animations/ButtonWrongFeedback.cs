@@ -46,6 +46,9 @@ public class ButtonWrongFeedback : MonoBehaviour
         Vector3 basePos = transform.localPosition;
 
         _target.color = _wrongColor;
+        // TODO: si hay un mensaje de error, mostrarlo acá
+        AudioManager.PlayUi(UiSound.Wrong);
+
         if (_wrongSprite != null) _target.sprite = _wrongSprite;
 
         // Shake + espera

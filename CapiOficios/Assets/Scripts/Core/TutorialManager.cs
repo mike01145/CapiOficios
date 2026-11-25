@@ -62,6 +62,14 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private int _assistedSequence = -1;
     [SerializeField] private ServePoint _servePoint;
     [SerializeField] private StepTracker _tracker;                 // opcional
+    [Header("Pedidos (solo Assisted)")]
+    [SerializeField] private OrderPopup _orderPopup;
+    [SerializeField] private int _ordersToServe = 3;
+    [SerializeField] private float _nextOrderDelay = 2.8f;       // lo que dura el cartel de "Bebida lista"
+    [Tooltip("Slots a liberar al empezar cada pedido (cabezal, molinillo, slot de la taza, varilla).")]
+    [SerializeField] private ItemSlot[] _slotsToClear;
+    [Tooltip("Objetos que vuelven limpios a su lugar en cada pedido (portafiltro, taza, jarra).")]
+    [SerializeField] private Carryable[] _itemsToReset;
     [Tooltip("Siempre clickeables en modo Guided (ej. el tacho).")]
     [SerializeField] private Highlightable[] _alwaysAllowed;
     [SerializeField] private GameObject _servePointObject;
@@ -77,14 +85,19 @@ public class TutorialManager : MonoBehaviour
     [Header("Capibara")]
     [SerializeField] private GameObject _helpBubble;
     [SerializeField] private Button _helpButton;
-    [SerializeField] private TextMeshProUGUI _helpText;
+    [SerializeField] private DialogBubble _helpText;
     [SerializeField] private float _helpSeconds = 4f;
-
+    [Header("Sonidos")]
+    [SerializeField] private AudioClip _stepDoneSound;      // al completar un paso
+    [SerializeField, Range(0f, 1f)] private float _stepSoundVolume = 0.8f;
     [Header("Eventos")]
     [SerializeField] private UnityEvent _onFinished;
     public TutorialSequence GetCurrentSequence => _running ? _sequences[_seqIndex] : null;
     public int GetCurrentStepIndex => _stepIndex;
     public bool GetIsAssisted => _mode == Mode.Assisted;
+    public bool GetIsLastSequence => _mode == Mode.Assisted
+    ? _served + 1 >= _ordersToServe
+    : _seqIndex + 1 >= _sequences.Length;
 
     public event EventHandler<SequenceStartedArgs> OnSequenceStarted;
     public event EventHandler<SequenceStartedArgs> OnStepChanged;
@@ -97,13 +110,16 @@ public class TutorialManager : MonoBehaviour
     private int _stepIndex = -1;
     private int _mistakes;
     private bool _running;
+    private int _served;
+    private int _lastPick = -1;
+    private int _pendingSeq;
     private Highlightable[] _guided = new Highlightable[0];
     private Highlightable[] _helped = new Highlightable[0];
     private Coroutine _helpRoutine;
     private Vector3 _arrowBase;
 
-    private TutorialStep Current => _running ? _sequences[_seqIndex].Final[_stepIndex] : null;
-
+    private TutorialStep Current =>
+        _running ? _sequences[_seqIndex].Final[_stepIndex] : null;
     private void OnEnable()
     {
         GameEvents.OnStepCompleted += TutorialManager_OnStepCompleted;
@@ -152,7 +168,7 @@ public class TutorialManager : MonoBehaviour
         }
         else
         {
-            BeginSequence(_assistedSequence < 0 ? UnityEngine.Random.Range(0, _sequences.Length) : _assistedSequence);
+            NextOrder();
         }
     }
 
@@ -170,18 +186,41 @@ public class TutorialManager : MonoBehaviour
     private void TutorialManager_OnStepCompleted(object sender, GameEvents.StepCompletedEventArgs e)
     {
         var s = Current;
-        if (s != null && s.completion == StepCompletion.GameStep && s.gameStep == e.Step) Advance();
+        if (s == null) return;
+
+        if (s.completion == StepCompletion.GameStep && s.gameStep == e.Step) { Advance(); return; }
+
+        if (_mode == Mode.Assisted)
+        {
+            var steps = _sequences[_seqIndex].Final;
+            for (int i = _stepIndex + 1; i < steps.Length; i++)
+                if (steps[i].completion == StepCompletion.GameStep && steps[i].gameStep == e.Step)
+                {
+                    GoToStep(i + 1);
+                    return;
+                }
+        }
     }
 
     private void TutorialManager_OnFeedback(object sender, GameEvents.FeedbackEventArgs e)
     {
-        if (_running && (e.Feedback == Feedback.Refused || e.Feedback == Feedback.WrongDrink))
+        if (_running && (e.Feedback == Feedback.Refused ||
+                     e.Feedback == Feedback.WrongDrink))
             RegisterMistake();
 
         var s = Current;
-        if (s == null || s.completion != StepCompletion.Feedback || s.feedback != e.Feedback) return;
+
+        if (s == null ||
+            s.completion != StepCompletion.Feedback ||
+            s.feedback != e.Feedback)
+            return;
+
         if (s.feedbackSource != null &&
-            (e.Source == null || !(e.Source == s.feedbackSource || e.Source.IsChildOf(s.feedbackSource)))) return;
+            (e.Source == null ||
+             !(e.Source == s.feedbackSource ||
+               e.Source.IsChildOf(s.feedbackSource))))
+            return;
+
         Advance();
     }
     // ---------- Flujo ----------
@@ -250,6 +289,16 @@ public class TutorialManager : MonoBehaviour
             return;
         }
 
+        if (_mode == Mode.Assisted && _served + 1 < _ordersToServe)
+        {
+            _served++;
+            _running = false;
+            ClearGuides();
+            ClearHelp();
+            StartCoroutine(NextOrderAfterDelay());
+            return;
+        }
+
         _running = false;
         ClearGuides();
         ClearHelp();
@@ -260,7 +309,11 @@ public class TutorialManager : MonoBehaviour
         _onFinished?.Invoke();
     }
 
-    private void Advance() => GoToStep(_stepIndex + 1);
+    private void Advance()
+    {
+        AudioManager.PlaySfx(_stepDoneSound, _stepSoundVolume);
+        GoToStep(_stepIndex + 1);
+    }
 
     private void OnNextClicked()
     {
@@ -277,6 +330,56 @@ public class TutorialManager : MonoBehaviour
             _mistakes = 0;
             ShowHelp();   // el capibara habla y resalta lo que hay que hacer
         }
+    }
+    private IEnumerator NextOrderAfterDelay()
+    {
+        yield return new WaitForSecondsRealtime(_nextOrderDelay);
+        NextOrder();
+    }
+
+    private void NextOrder()
+    {
+        ResetStations();
+
+        int n = _sequences.Length;
+        int pick;
+        do { pick = UnityEngine.Random.Range(0, n); } while (n > 1 && pick == _lastPick);   // no repite la anterior
+        _lastPick = pick;
+        _pendingSeq = pick;
+
+        if (_orderPopup != null) _orderPopup.Show(_sequences[pick].drink, StartPendingOrder);
+        else StartPendingOrder();
+    }
+
+    private void StartPendingOrder() => BeginSequence(_pendingSeq);
+
+    private void ResetStations()
+    {
+        var hand = PlayerHand.Instance;
+        if (hand != null && hand.GetHeld != null)
+        {
+            hand.GetHeld.ResetState();
+            hand.ReturnHeldHome();
+        }
+
+        if (_slotsToClear != null)
+        {
+            foreach (var s in _slotsToClear)
+            {
+                if (s == null) continue;
+                s.ClearPlaced();
+                if (s is Grinder g) g.ResetGrinder();
+            }
+        }
+
+        if (_itemsToReset != null)
+            foreach (var c in _itemsToReset)
+            {
+                if (c == null) continue;
+                c.GetBusy = false;
+                c.ResetState();
+                c.ReturnHome();
+            }
     }
     // ---------- Bloqueo de clicks (solo Guided) ----------
     private bool IsClickAllowed(Highlightable h)
@@ -337,6 +440,7 @@ public class TutorialManager : MonoBehaviour
     // ---------- Capibara: conectalo al OnClick del botón del capibara ----------
     private void ShowHelp()
     {
+        if (!_running) return;
         if (_helpBubble == null || _helpText == null) return;
 
         var s = Current;
@@ -344,12 +448,12 @@ public class TutorialManager : MonoBehaviour
 
         if (s == null)
         {
-            _helpText.text = "¡Ya terminaste todo!";
+            _helpText.SetText("¡Ya terminaste todo!");
         }
         else
         {
             ClearHelp();
-            _helpText.text = string.IsNullOrEmpty(s.helpText) ? s.text : s.helpText;
+            _helpText.SetText(string.IsNullOrEmpty(s.helpText) ? s.text : s.helpText);
             SetHelp(s.targets);
         }
 

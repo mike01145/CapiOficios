@@ -106,4 +106,9 @@ public class Grinder : ItemSlot
         GameEvents.CompleteStep(GameStep.Grind);
         PlayerHand.Instance.Say("¡Café molido!");
     }
+    public void ResetGrinder()
+    {
+        GetHasBeans = false;
+        if (_beansInHopper != null) _beansInHopper.SetActive(false);
+    }
 }

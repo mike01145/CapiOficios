@@ -52,5 +52,4 @@ public class NameEntry : MonoBehaviour
         PlayerProfile.SetName(name);
         _onNameConfirmed?.Invoke();
     }
-
 }

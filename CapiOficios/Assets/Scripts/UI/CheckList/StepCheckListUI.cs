@@ -14,6 +14,7 @@ public class StepChecklistUI : MonoBehaviour
     [SerializeField] private bool _closeOnStepChange = false;
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI _title;
+    [SerializeField] private TextMeshProUGUI _titleOnBoard;
     [SerializeField] private Button _toggleButton;       // la pestaña / flecha
     [SerializeField] private Button _closeButton;       // la pestaña / flecha
     [SerializeField] private GameObject _listPanel;      // el "papel" con la lista
@@ -78,6 +79,7 @@ public class StepChecklistUI : MonoBehaviour
     private void StepCheckListUI_OnSequenceStartedBuild(object sender, TutorialManager.SequenceStartedArgs e)
     {
         if (_title != null) _title.text = e.sequence.name;
+        if (_titleOnBoard != null) _titleOnBoard.text = e.sequence.name;
 
         foreach (var r in _rows) if (r != null) Destroy(r.gameObject);
         _rows.Clear();

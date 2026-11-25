@@ -17,6 +17,10 @@
 
       firebase.initializeApp(firebaseConfig);
 
+      firebase.auth().onAuthStateChanged((u) => {
+        window.authReady = true; // Firebase ya restauró la sesión
+        window.authUser = u ? u.uid : null;
+      });
       console.log("Firebase inicializado correctamente");
     </script>
     <meta charset="utf-8" />

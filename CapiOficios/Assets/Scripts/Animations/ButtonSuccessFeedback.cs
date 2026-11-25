@@ -45,6 +45,9 @@ public class ButtonSuccessFeedback : MonoBehaviour
         Vector3 baseScale = transform.localScale;
 
         _target.color = _successColor;
+        // TODO: si hay un mensaje de Success, mostrarlo acá
+        AudioManager.PlayUi(UiSound.Correct);
+
         if (_successSprite != null) _target.sprite = _successSprite;
         if (_successMessage != null) _successMessage.SetActive(true);
 

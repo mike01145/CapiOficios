@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public enum Drink { Espresso, Latte, Mocha }
+public enum Drink { Espresso, Latte, Capuchino }
 
 public class Cup : Carryable
 {
@@ -32,7 +32,7 @@ public class Cup : Carryable
         {
             Drink.Espresso => GetHasEspresso && !GetHasMilk && !GetHasChocolate,
             Drink.Latte => GetHasEspresso && GetHasMilk && !GetHasChocolate,
-            Drink.Mocha => GetHasEspresso && GetHasMilk && GetHasChocolate,
+            Drink.Capuchino => GetHasEspresso && GetHasMilk && GetHasChocolate,
             _ => false,
         };
     }

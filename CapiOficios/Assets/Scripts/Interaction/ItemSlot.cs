@@ -51,6 +51,13 @@ public class ItemSlot : MonoBehaviour, IClickable
         foreach (var t in _accepts) if (t == carryable.Type) return true;
         return false;
     }
+    public void ClearPlaced()
+    {
+        if (GetPlaced == null) return;
+        var old = GetPlaced;
+        GetPlaced = null;
+        OnRemoved(old);
+    }
 
     protected virtual void OnPlaced(Carryable carryable) { }
     protected virtual void OnRemoved(Carryable carryable) { }
